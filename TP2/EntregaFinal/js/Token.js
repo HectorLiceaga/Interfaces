@@ -1,7 +1,11 @@
-class Token extends Circle {
+class Token {
 
-    constructor(x, y, ctx) {
-        super(x, y, ctx);
+    constructor(x, y, ctx, fill) {
+        this.x = x;
+        this.y = y;
+        this.ctx = ctx;
+        this.fill = fill;
+        this.rad = 30;
     }
 
     setFill(fill) {
@@ -32,18 +36,19 @@ class Token extends Circle {
         return this.fill;
     }
 
-    draw() {//aca iria un drawimage de la ficha
- /*       
-        let image = new Image();
-        image.src = '..\assets\images\ficha.png';
-        super.ctx.drawImage(image, this.x,this.y, 50, 50)
-*/
-        ctx.beginPath();
-        ctx.fillStyle = 'black';
-        ctx.arc(this.x, this.y, 25, 0, Math.PI * 2);
-        ctx.fill();
-        ctx.closePath()
 
+
+    drawToken(x, y) {
+        this.ctx.beginPath();
+        this.ctx.arc(x + 25, y + 25, 22, 0, Math.PI * 2);
+        this.ctx.fillStyle = this.fill;
+        this.ctx.fill();
+        this.ctx.closePath();
+        let image = new Image();
+        image.src = 'assets/images/ficha.png';
+        image.onload = function () {
+            ctx.drawImage(image, x, y, 50, 50);
+        }
     }
 
     isOnFigure(x, y) {

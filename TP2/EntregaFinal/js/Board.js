@@ -9,7 +9,10 @@ class Board {
         this.ctx.fillStyle = 'blue';
         this.ctx.fillRect(40, 70, FACTOR * w, FACTOR * h);
         this.matrix = new Array();
+        this.dropZone = new Array();
         for (let x = 0; x < this.w; x++) {
+            this.dropZone.push(new Rect(40+x*FACTOR,10,FACTOR,60,this.ctx,'white'));
+            this.dropZone[x].draw();
             this.matrix[x] = new Array();
             for (let y = 0; y < this.h; y++) {
                 let posX = 70 + x * FACTOR;
@@ -38,6 +41,7 @@ class Board {
         this.ctx.fillRect(40, 70, 60 * this.w, 60 * this.h);
 
         for (let x = 0; x < this.w; x++) {
+            this.dropZone[x].draw();
             for (let y = 0; y < this.h; y++) {
                 let elem = this.matrix[x][y];
                 elem.draw();
@@ -45,5 +49,12 @@ class Board {
         }
     }
 
-
+    getDropZone(x,y){
+        for(let i = 0; i < this.dropZone.length; i++){
+            const element = this.dropZone[i];
+            if (element.isOnFigure(x, y)) {
+                return i;
+            }
+        }
+    }
 }

@@ -11,6 +11,7 @@ let lastClickedFigure = null;
 let isMoving = false;
 let xOriginal;
 let yOriginal;
+let turn = 0;
 
 /*************************************************  Creación de jugadores  ************************************************************* */
 let player1 = new Player(670, 100, ctx);
@@ -56,11 +57,18 @@ cv.addEventListener('mouseout', stop, false);
 
 function start(e) {
     isMoving = true;
-    let click = player1.findFigure(e.layerX, e.layerY);
-    if (click != null) {//tb preguntar si esta disponible, si es su turno
-        xOriginal = click.getX();
-        yOriginal = click.getY();
-        lastClickedFigure = click;
+    let first = player1.findFigure(e.layerX, e.layerY);
+    let second = player2.findFigure(e.layerX, e.layerY);
+    if (first != null && turn%2 == 0 ) {//tb preguntar si esta disponible, si es su turno
+        xOriginal = first.getX();
+        yOriginal = first.getY();
+        lastClickedFigure = first;
+        reload();
+    }
+    if (second != null && turn%2 == 1 ) {//tb preguntar si esta disponible, si es su turno
+        xOriginal = second.getX();
+        yOriginal = second.getY();
+        lastClickedFigure = second;
         reload();
     }
 }
@@ -90,10 +98,12 @@ function move(e) {
 
 function stop() {
     isMoving = false;
+    let position = board.getDropZone(lastClickedFigure.getX(),lastClickedFigure.getY() );
     if (lastClickedFigure != null) { //funcion paara detectar el rect
-        if (lastClickedFigure.getX() > 40 && lastClickedFigure.getX() < 100) {//funcion que retorna el x correspondiente a la columna != null
-            let b = board.setToken(0, lastClickedFigure); //misma función pero usando la x
+        if (position != null) {//funcion que retorna el x correspondiente a la columna != null
+            let b = board.setToken(position, lastClickedFigure); //misma función pero usando la x
             console.log(b);
+            turn++;
             reload();
         } else {
             //devuelvo a su lugar original
@@ -103,3 +113,5 @@ function stop() {
     }
     lastClickedFigure = null;
 }
+
+

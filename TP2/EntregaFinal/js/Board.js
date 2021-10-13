@@ -8,32 +8,42 @@ class Board {
         this.h = h;
         this.ctx.fillStyle = 'blue';
         this.ctx.fillRect(40, 70, FACTOR * w, FACTOR * h);
-        let matrix = new Array();
+        this.matrix = new Array();
         for (let x = 0; x < this.w; x++) {
-            matrix[x] = new Array();
+            this.matrix[x] = new Array();
             for (let y = 0; y < this.h; y++) {
                 let posX = 70 + x * FACTOR;
                 let posY = 100 + y * FACTOR;
-                matrix[x][y] = new Circle(posX, posY, ctx).draw('white');
+                this.matrix[x][y] = new Circle(posX, posY, ctx, 'white');
+                this.matrix[x][y].draw();
             }
         }
     }
 
     setToken(x, token) {
-        for(let i = matrix[x].length()-1; i > -1; i--){
-            matrix[x][i] =  token.draw();
-
+        let m = this.matrix;
+        for (let i = m[x].length - 1; i > -1; i--) {
+            if (!m[x][i].isOccupied()) {
+                let t = new Token(m[x][i].getX(), m[x][i].getY(), token.getCtx(), token.getFill());
+                m[x][i] = t;
+                m[x][i].setOccuppied(true);
+                return true;
+            }
         }
+        return false;
     }
 
-    draw(){
+    draw() {
+        this.ctx.fillStyle = 'blue';
+        this.ctx.fillRect(40, 70, 60 * this.w, 60 * this.h);
+
         for (let x = 0; x < this.w; x++) {
             for (let y = 0; y < this.h; y++) {
-                let elem = this.matrix[posX][posY];
+                let elem = this.matrix[x][y];
                 elem.draw();
             }
         }
     }
 
-    
+
 }

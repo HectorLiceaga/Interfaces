@@ -11,7 +11,7 @@ class Board {
         this.matrix = new Array();
         this.dropZone = new Array();
         for (let x = 0; x < this.w; x++) {
-            this.dropZone.push(new Rect(40+x*FACTOR,10,FACTOR,60,this.ctx,'white'));
+            this.dropZone.push(new Rect(40+x*FACTOR,0,FACTOR,60,this.ctx,'white'));
             this.dropZone[x].draw();
             this.matrix[x] = new Array();
             for (let y = 0; y < this.h; y++) {
@@ -56,5 +56,9 @@ class Board {
                 return i;
             }
         }
+    }
+
+    check() {
+        
     }
 }

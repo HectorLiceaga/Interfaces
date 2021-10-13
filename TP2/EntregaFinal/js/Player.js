@@ -1,14 +1,15 @@
 class Player {
-    constructor(x, y, ctx) {
+    constructor(x, y, ctx, id) {
         this.deck = [];
         this.ctx = ctx;
         this.initX = x;
         this.initY = y;
+        this.id = id;
     }
 
     createDeck(img, quantity) {
         for (let i = 0; i < quantity; i++) {
-            let token = new Token(this.initX, this.initY + i * 15, this.ctx, img);
+            let token = new Token(this.initX, this.initY + i * 15, this.ctx, img, this.id);
             this.deck.push(token);
             this.deck[i].draw();
         }
@@ -16,6 +17,10 @@ class Player {
 
     getDeck() {
         return this.deck;
+    }
+
+    getId(){
+        return this.id;
     }
 
     findFigure(x, y) {
@@ -31,5 +36,9 @@ class Player {
         this.deck.forEach(element => {
             element.draw();
         });
+    }
+
+    dropToken(token){
+        this.deck.splice(this.deck.indexOf(token), 1);
     }
 }

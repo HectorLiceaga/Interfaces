@@ -1,8 +1,9 @@
 class Token extends Circle {
 
-    constructor(x, y, ctx, fill) {
+    constructor(x, y, ctx, fill, id) {
         super(x, y, ctx, fill);
         this.rad = 30;
+        this.id = id;
     }
 
     setPosition(x, y) {
@@ -23,6 +24,10 @@ class Token extends Circle {
 
     getFill() {
         return this.fill;
+    }
+
+    getId() {
+        return this.id;
     }
 
     draw() {

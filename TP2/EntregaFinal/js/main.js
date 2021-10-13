@@ -14,12 +14,12 @@ let yOriginal;
 let turn = 0;
 
 /*************************************************  Creación de jugadores  ************************************************************* */
-let player1 = new Player(670, 100, ctx);
-let imgP1 = document.getElementById("token-y"); 
+let player1 = new Player(670, 100, ctx, 1);
+let imgP1 = document.getElementById("token-y");
 player1.createDeck(imgP1, 25);
 
-let player2 = new Player(750, 100, ctx);
-let imgP2 = document.getElementById("token-r"); 
+let player2 = new Player(750, 100, ctx, 2);
+let imgP2 = document.getElementById("token-r");
 player2.createDeck(imgP2, 25);
 
 /*************************************************  Creación de tablero  ************************************************************* */
@@ -37,7 +37,8 @@ function reload() {
     board.draw();
     player1.drawDeck();
     player2.drawDeck();
-    lastClickedFigure.draw();
+    if (lastClickedFigure != null)
+        lastClickedFigure.draw();
 }
 
 function clearCanvas() {
@@ -53,41 +54,49 @@ cv.addEventListener('mouseup', stop, false);
 cv.addEventListener('mouseout', stop, false);
 
 
+/*************************************************  Timer ************************************************************* */
+
+let strt = document.getElementById("btnStart");
+strt.addEventListener('click', (e) => {
+    let sec = 59;
+    let min = 4;
+    sec = chekTime(sec);
+    setInterval(function(){
+        document.getElementById("countdown").innerHTML = '0' + min + ':' + sec;
+        sec--;
+        if(sec == 0){
+            sec = 59;
+            min--;
+        }
+    }, 1000);
+});
+
+function chekTime(s){
+    if(s<10){
+        s="0"+s;
+    }
+    return s;
+}
+
 /*************************************************  Funciones de eventos  ************************************************************* */
 
 function start(e) {
     isMoving = true;
-    let first = player1.findFigure(e.layerX, e.layerY);
+    let first = player1.findFigure(e.layerX, e.layerY); //no es la ficha
     let second = player2.findFigure(e.layerX, e.layerY);
-    if (first != null && turn%2 == 0 ) {//tb preguntar si esta disponible, si es su turno
+    if (first != null && turn % 2 == 0) {
         xOriginal = first.getX();
         yOriginal = first.getY();
         lastClickedFigure = first;
         reload();
     }
-    if (second != null && turn%2 == 1 ) {//tb preguntar si esta disponible, si es su turno
+    if (second != null && turn % 2 == 1) {
         xOriginal = second.getX();
         yOriginal = second.getY();
         lastClickedFigure = second;
         reload();
     }
 }
-/*
-function findFigure(x, y) {
-    for (let i = 0; i < tokensP1.length; i++) {//j1
-        const element = tokensP1[i];
-        if (element.isOnFigure(x, y)) {
-            return element;
-        }
-    }
-    for (let i = 0; i < tokensP2.length; i++) {//j1
-        const element = tokensP2[i];
-        if (element.isOnFigure(x, y)) {
-            return element;
-        }
-    }
-}
-*/
 
 function move(e) {
     if (isMoving && lastClickedFigure != null) {
@@ -98,15 +107,26 @@ function move(e) {
 
 function stop() {
     isMoving = false;
-    let position = board.getDropZone(lastClickedFigure.getX(),lastClickedFigure.getY() );
-    if (lastClickedFigure != null) { //funcion paara detectar el rect
-        if (position != null) {//funcion que retorna el x correspondiente a la columna != null
-            let b = board.setToken(position, lastClickedFigure); //misma función pero usando la x
-            console.log(b);
-            turn++;
-            reload();
+    if (lastClickedFigure != null) {
+        let position = board.getDropZone(lastClickedFigure.getX(), lastClickedFigure.getY());
+        if (position != null) {
+            let b = board.setToken(position, lastClickedFigure);
+            if (b) {
+                if (lastClickedFigure.getId() === player1.getId()) {
+                    player1.dropToken(lastClickedFigure);
+                }
+                if (lastClickedFigure.getId() === player2.getId()) {
+                    player2.dropToken(lastClickedFigure);
+                }
+                turn++;
+                board.check(lastClickedFigure);
+                lastClickedFigure = null;
+                reload();
+            } else {
+                lastClickedFigure.setPosition(xOriginal, yOriginal);
+                reload();
+            }
         } else {
-            //devuelvo a su lugar original
             lastClickedFigure.setPosition(xOriginal, yOriginal);
             reload();
         }

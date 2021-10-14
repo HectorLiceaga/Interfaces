@@ -58,25 +58,20 @@ cv.addEventListener('mouseout', stop, false);
 
 let strt = document.getElementById("btnStart");
 strt.addEventListener('click', (e) => {
-    let sec = 59;
-    let min = 4;
-    sec = chekTime(sec);
-    setInterval(function(){
+    let sec = 15;
+    let min = 0;
+    setInterval(function () {
+        if (sec < 10) {
+            sec = "0" + sec;
+        }
         document.getElementById("countdown").innerHTML = '0' + min + ':' + sec;
         sec--;
-        if(sec == 0){
+        if (sec == 0) {
             sec = 59;
             min--;
         }
     }, 1000);
 });
-
-function chekTime(s){
-    if(s<10){
-        s="0"+s;
-    }
-    return s;
-}
 
 /*************************************************  Funciones de eventos  ************************************************************* */
 
@@ -119,7 +114,7 @@ function stop() {
                     player2.dropToken(lastClickedFigure);
                 }
                 turn++;
-                board.check(lastClickedFigure);
+                board.winCondition(lastClickedFigure);
                 lastClickedFigure = null;
                 reload();
             } else {

@@ -12,6 +12,7 @@ let isMoving = false;
 let xOriginal;
 let yOriginal;
 let turn = 0;
+let gameStart = false;
 
 /*************************************************  Creación de jugadores  ************************************************************* */
 let player1 = new Player(670, 100, ctx, 1);
@@ -58,17 +59,23 @@ cv.addEventListener('mouseout', stop, false);
 
 let strt = document.getElementById("btnStart");
 strt.addEventListener('click', (e) => {
-    let sec = 15;
-    let min = 0;
-    setInterval(function () {
+    let sec = 59;
+    let min = 4;
+    gameStart = true;
+    let interval = setInterval(function () {
         if (sec < 10) {
             sec = "0" + sec;
         }
         document.getElementById("countdown").innerHTML = '0' + min + ':' + sec;
-        sec--;
-        if (sec == 0) {
-            sec = 59;
-            min--;
+        if(min >= 0){
+            sec--;
+            if (sec == -1) {
+                sec = 59;
+                min--;
+            }
+        }else{
+            clearInterval(interval);
+            alert('game over');
         }
     }, 1000);
 });
@@ -76,20 +83,22 @@ strt.addEventListener('click', (e) => {
 /*************************************************  Funciones de eventos  ************************************************************* */
 
 function start(e) {
-    isMoving = true;
-    let first = player1.findFigure(e.layerX, e.layerY); //no es la ficha
-    let second = player2.findFigure(e.layerX, e.layerY);
-    if (first != null && turn % 2 == 0) {
-        xOriginal = first.getX();
-        yOriginal = first.getY();
-        lastClickedFigure = first;
-        reload();
-    }
-    if (second != null && turn % 2 == 1) {
-        xOriginal = second.getX();
-        yOriginal = second.getY();
-        lastClickedFigure = second;
-        reload();
+    if (gameStart) {
+        isMoving = true;
+        let first = player1.findFigure(e.layerX, e.layerY); //no es la ficha
+        let second = player2.findFigure(e.layerX, e.layerY);
+        if (first != null && turn % 2 == 0) {
+            xOriginal = first.getX();
+            yOriginal = first.getY();
+            lastClickedFigure = first;
+            reload();
+        }
+        if (second != null && turn % 2 == 1) {
+            xOriginal = second.getX();
+            yOriginal = second.getY();
+            lastClickedFigure = second;
+            reload();
+        }
     }
 }
 
@@ -128,5 +137,3 @@ function stop() {
     }
     lastClickedFigure = null;
 }
-
-

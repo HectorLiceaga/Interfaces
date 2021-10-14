@@ -87,6 +87,8 @@ class Board {
             if (contador < 4) {
                 if (this.matrix[i][this.lastTokenY].isOccupied() && this.matrix[i][this.lastTokenY].getId() == Token.getId()) {
                     contador++;
+                }else{
+                    contador = 0;
                 }
             } else{
                 return true;
@@ -116,7 +118,7 @@ class Board {
             i--;
             j--;
             if(contador == 4)
-              return true;
+                return true;
         }
     }
 
@@ -140,7 +142,7 @@ class Board {
             i--;
             j++;
             if(contador == 4)
-              return true;
+                return true;
         }
     }
 
@@ -152,7 +154,5 @@ class Board {
         if (vertical || horizontal || diagDesc || diagAsc)
             alert('ganaste!!');
     }
-
-
 
 }

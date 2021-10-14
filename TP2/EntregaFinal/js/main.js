@@ -14,6 +14,40 @@ let yOriginal;
 let turn = 0;
 let gameStart = false;
 
+
+/*************************************************  Creación de tablero  ************************************************************* */
+let board = new Board(ctx, 4, 7, 6); // estado jugable
+/*
+board = document.getElementById("winCondition").addEventListener('change', (e) => {
+    let v = parseInt(e.target.value);
+    return new Board(ctx, v, v + 3, v + 2);
+ });
+
+/*************************************************  Game start: event, gameStart = true ************************************************************* */
+
+let strt = document.getElementById("btnStart");
+strt.addEventListener('click', (e) => {
+    let sec = 59;                                   /*************************************************  Timer ************************************************************* */
+    let min = 4;
+    gameStart = true;
+    let interval = setInterval(function () {
+        if (sec < 10) {
+            sec = "0" + sec;
+        }
+        document.getElementById("countdown").innerHTML = '0' + min + ':' + sec;
+        if (min >= 0) {
+            sec--;
+            if (sec == -1) {
+                sec = 59;
+                min--;
+            }
+        } else {
+            clearInterval(interval);
+            terminate('GAME OVER!!! sE TERMINÓ EL TIEMPO')
+        }
+    }, 1000);
+});
+
 /*************************************************  Creación de jugadores  ************************************************************* */
 let player1 = new Player(670, 100, ctx, 1);
 let imgP1 = document.getElementById("token-y");
@@ -22,14 +56,6 @@ player1.createDeck(imgP1, 25);
 let player2 = new Player(750, 100, ctx, 2);
 let imgP2 = document.getElementById("token-r");
 player2.createDeck(imgP2, 25);
-
-/*************************************************  Creación de tablero  ************************************************************* */
-let board = new Board(ctx, 7, 6);
-//3 en línea = 6 5 ??
-//4 en linea = 7 6
-//5 en línea = 8 7
-//6 en línea = 9 8
-//7 en línea = 10 9 ?? 
 
 /*************************************************  Actualización dibujo canvas  ************************************************************* */
 
@@ -52,63 +78,36 @@ function clearCanvas() {
 cv.addEventListener('mousedown', start, false);
 cv.addEventListener('mousemove', move, false);
 cv.addEventListener('mouseup', stop, false);
-cv.addEventListener('mouseout', stop, false);
+cv.addEventListener('mouseout', stop, false); //Para cuando se sale del áresa del canvas
 
-
-/*************************************************  Timer ************************************************************* */
-
-let strt = document.getElementById("btnStart");
-strt.addEventListener('click', (e) => {
-    let sec = 59;
-    let min = 4;
-    gameStart = true;
-    let interval = setInterval(function () {
-        if (sec < 10) {
-            sec = "0" + sec;
-        }
-        document.getElementById("countdown").innerHTML = '0' + min + ':' + sec;
-        if(min >= 0){
-            sec--;
-            if (sec == -1) {
-                sec = 59;
-                min--;
-            }
-        }else{
-            clearInterval(interval);
-            alert('game over');
-        }
-    }, 1000);
-});
 
 /*************************************************  Funciones de eventos  ************************************************************* */
-
+/**Función invocada con click */
 function start(e) {
     if (gameStart) {
         isMoving = true;
-        let first = player1.findFigure(e.layerX, e.layerY); //no es la ficha
+        let first = player1.findFigure(e.layerX, e.layerY);
         let second = player2.findFigure(e.layerX, e.layerY);
         if (first != null && turn % 2 == 0) {
             xOriginal = first.getX();
             yOriginal = first.getY();
             lastClickedFigure = first;
-            reload();
         }
         if (second != null && turn % 2 == 1) {
             xOriginal = second.getX();
             yOriginal = second.getY();
             lastClickedFigure = second;
-            reload();
         }
     }
 }
-
+/**Función invocada al mover el mouse */
 function move(e) {
     if (isMoving && lastClickedFigure != null) {
         lastClickedFigure.setPosition(e.layerX, e.layerY);
         reload();
     }
 }
-
+/**Función invocada al soltar el click */
 function stop() {
     isMoving = false;
     if (lastClickedFigure != null) {
@@ -123,7 +122,16 @@ function stop() {
                     player2.dropToken(lastClickedFigure);
                 }
                 turn++;
-                board.winCondition(lastClickedFigure);
+                let id = board.winCondition(lastClickedFigure);
+                if (id == 1) {
+                    terminate('GANASTE jugador 1!!!');
+                }
+                if (id == 2) {
+                    terminate('GANASTE jugador 2!!!');
+                }
+                if (turn == 42) {
+                    terminate('GAME OVER!!! Empate!!!')
+                }
                 lastClickedFigure = null;
                 reload();
             } else {
@@ -136,4 +144,10 @@ function stop() {
         }
     }
     lastClickedFigure = null;
+}
+
+/**Termina el juego */
+function terminate(msj) {
+    alert(msj);
+    location.reload();
 }

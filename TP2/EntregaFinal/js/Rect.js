@@ -1,26 +1,26 @@
-class Rect extends Figure{
+class Rect extends Figure {
 
-    constructor(x,y,w,h,fill,ctx){
-        super(x,y,fill,ctx);
+    constructor(x, y, w, h, fill, ctx) {
+        super(x, y, fill, ctx);
 
         this.w = w;
         this.h = h;
     }
 
-    getH(){
+    getH() {
         return this.h;
     }
 
-    getY(){
+    getY() {
         return this.y;
     }
 
-    draw(){
+    draw() {
         super.draw();
-        this.ctx.fillRect(this.x,this.y,this.w,this.h);
+        this.ctx.fillRect(this.x, this.y, this.w, this.h);
     }
 
-    isOnFigure(x,y){
+    isOnFigure(x, y) {
         return !(x < this.x || x > this.x + this.w || y < this.y || y > this.y + this.h);
     }
 }

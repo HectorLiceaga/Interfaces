@@ -37,7 +37,7 @@ class Player {
             element.draw();
         });
     }
-
+/** Elimina el token del mazo */
     dropToken(token){
         this.deck.splice(this.deck.indexOf(token), 1);
     }

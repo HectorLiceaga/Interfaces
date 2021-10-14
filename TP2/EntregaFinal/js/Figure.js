@@ -1,6 +1,6 @@
-class Figure{
-    
-    constructor(x,y,ctx,fill){
+class Figure {
+
+    constructor(x, y, ctx, fill) {
         this.x = x;
         this.x = x;
         this.y = y;
@@ -8,37 +8,37 @@ class Figure{
         this.fill = fill;
     }
 
-    setFill(fill){
+    setFill(fill) {
         this.fill = fill;
     }
 
-    setPosition(x,y){
+    setPosition(x, y) {
         this.x = x;
         this.y = y;
     }
 
-    getPosition(){
-        return{
+    getPosition() {
+        return {
             x: this.getX(),
             y: this.getY()
         };
     }
 
-    getX(){
+    getX() {
         return this.x;
     }
 
-    getY(){
+    getY() {
         return this.y;
     }
 
-    getFill(){
+    getFill() {
         return this.fill;
     }
 
-    draw(){
+    draw() {
         this.ctx.fillStyle = this.fill;
     }
 
-    isOnFigure(x,y){ };
+    isOnFigure(x, y) { };
 }

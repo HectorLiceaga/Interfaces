@@ -1,9 +1,10 @@
 class Board {
-    constructor(ctx, w, h) {
+    constructor(ctx, wc, w, h) {
 
         const FACTOR = 60;
 
         this.ctx = ctx;
+        this.wc = wc;
         this.w = w;
         this.h = h;
         this.ctx.fillStyle = 'blue';
@@ -25,6 +26,7 @@ class Board {
         }
     }
 
+    /*************************************************  Set un nuevo token en la matriz - Retorna bool  ************************************************************* */
     setToken(x, token) {
         let m = this.matrix;
         for (let i = m[x].length - 1; i > -1; i--) {
@@ -40,6 +42,7 @@ class Board {
         return false;
     }
 
+    /*************************************************  Dibuja el tablero  ************************************************************* */
     draw() {
         this.ctx.fillStyle = 'blue';
         this.ctx.fillRect(40, 70, 60 * this.w, 60 * this.h);
@@ -53,6 +56,7 @@ class Board {
         }
     }
 
+    /*************************************************  Devuelve la columna donde fue soltada la ficha ************************************************************* */
     getDropZone(x, y) {
         for (let i = 0; i < this.dropZone.length; i++) {
             const element = this.dropZone[i];
@@ -62,6 +66,7 @@ class Board {
         }
     }
 
+    /*************************************************  Funciones de chequeos de victoria  ************************************************************* */
     checkVertical(Token) {
         let contador = 0;
         for (let i = 0; i < this.matrix.length; i++) {
@@ -77,7 +82,7 @@ class Board {
                 }
             }
         }
-        if(contador == 4)
+        if (contador == 4)
             return true;
     }
 
@@ -87,72 +92,78 @@ class Board {
             if (contador < 4) {
                 if (this.matrix[i][this.lastTokenY].isOccupied() && this.matrix[i][this.lastTokenY].getId() == Token.getId()) {
                     contador++;
-                }else{
+                } else {
                     contador = 0;
                 }
-            } else{
+            } else {
                 return true;
             }
         }
-        if(contador == 4)
+        if (contador == 4)
             return true;
     }
 
-    checkDiagDesc(Token){
+    checkDiagDesc(Token) {
         let contador = 0;
         let i = this.lastTokenX;
         let j = this.lastTokenY;
-        while(i < this.matrix.length && j < this.matrix[i].length && this.matrix[i][j].isOccupied() && this.matrix[i][j].getId() == Token.getId()) {
+        while (i < this.matrix.length && j < this.matrix[i].length && this.matrix[i][j].isOccupied() && this.matrix[i][j].getId() == Token.getId()) {
             contador++;
             i++;
             j++;
-            if(contador == 4)
+            if (contador == 4)
                 return true;
         }
         i = this.lastTokenX - 1;
-        if(i < 0)
-        i = 0;
+        if (i < 0)
+            i = 0;
         j = this.lastTokenY - 1;
-        while(i < this.matrix.length && j < this.matrix[i].length && this.matrix[i][j].isOccupied() && this.matrix[i][j].getId() == Token.getId()){
+        if (j < 0)
+            j = 0;
+        while (i >= 0 && j >= 0 && i < this.matrix.length && j < this.matrix[i].length && this.matrix[i][j].isOccupied() && this.matrix[i][j].getId() == Token.getId()) {
             contador++;
             i--;
             j--;
-            if(contador == 4)
+            if (contador == 4)
                 return true;
         }
     }
 
-    checkDiagAsc(Token){
+    checkDiagAsc(Token) {
         let contador = 0;
         let i = this.lastTokenX;
         let j = this.lastTokenY;
-        while(i < this.matrix.length && j < this.matrix[i].length && this.matrix[i][j].isOccupied() && this.matrix[i][j].getId() == Token.getId()) {
+        if (j < 0)
+            j = 0;
+        while (i >= 0 && j >= 0 && i < this.matrix.length && j < this.matrix[i].length && this.matrix[i][j].isOccupied() && this.matrix[i][j].getId() == Token.getId()) {
             contador++;
             i++;
             j--;
-            if(contador == 4)
+            if (contador == 4)
                 return true;
         }
         i = this.lastTokenX - 1;
-        if(i < 0)
-        i = 0;
+        if (i < 0)
+            i = 0;
         j = this.lastTokenY + 1;
-        while(i < this.matrix.length && j < this.matrix[i].length && this.matrix[i][j].isOccupied() && this.matrix[i][j].getId() == Token.getId()){
+        while (i >= 0 && j >= 0 && i < this.matrix.length && j < this.matrix[i].length && this.matrix[i][j].isOccupied() && this.matrix[i][j].getId() == Token.getId()) {
             contador++;
             i--;
             j++;
-            if(contador == 4)
+            if (contador == 4)
                 return true;
         }
     }
 
+    /*************************************************  Ejecuta funciones de chequeos - Devuelve el id ganador  ************************************************************* */
     winCondition(token) {
         let vertical = this.checkVertical(token);
         let horizontal = this.checkHorizontal(token);
         let diagDesc = this.checkDiagDesc(token);
         let diagAsc = this.checkDiagAsc(token);
-        if (vertical || horizontal || diagDesc || diagAsc)
-            alert('ganaste!!');
+        if (vertical || horizontal || diagDesc || diagAsc) {
+            return token.getId();
+        }
     }
 
 }

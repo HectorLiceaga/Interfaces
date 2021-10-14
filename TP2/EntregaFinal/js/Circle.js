@@ -1,4 +1,4 @@
-class Circle extends Figure{
+class Circle extends Figure {
     constructor(x, y, ctx, fill) {
         super(x, y, ctx, fill);
         this.occupied = false

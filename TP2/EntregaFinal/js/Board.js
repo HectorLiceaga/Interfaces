@@ -1,29 +1,17 @@
 class Board {
-    constructor(ctx, wc, w, h) {
+    constructor(ctx) {
 
         const FACTOR = 60;
 
         this.ctx = ctx;
-        this.wc = wc;
-        this.w = w;
-        this.h = h;
-        this.ctx.fillStyle = 'blue';
-        this.ctx.fillRect(40, 70, FACTOR * w, FACTOR * h);
+        this.wc;
+        this.w;
+        this.h;
+
         this.matrix = new Array();
         this.dropZone = new Array();
         this.lastTokenX;
         this.lastTokenY;
-        for (let x = 0; x < this.w; x++) {
-            this.dropZone.push(new Rect(40 + x * FACTOR, 0, FACTOR, 60, this.ctx, 'white'));
-            this.dropZone[x].draw();
-            this.matrix[x] = new Array();
-            for (let y = 0; y < this.h; y++) {
-                let posX = 70 + x * FACTOR;
-                let posY = 100 + y * FACTOR;
-                this.matrix[x][y] = new Circle(posX, posY, ctx, 'white');
-                this.matrix[x][y].draw();
-            }
-        }
     }
 
     /*************************************************  Set un nuevo token en la matriz - Retorna bool  ************************************************************* */
@@ -40,6 +28,25 @@ class Board {
             }
         }
         return false;
+    }
+
+    /*************************************************  Setea los valores del tablero  ************************************************************* */
+    setWC(wc){
+        this.wc = wc;
+        this.w = wc + 3;
+        this.h = wc +2
+        
+        for (let x = 0; x < this.w; x++) {
+            this.dropZone.push(new Rect(40 + x * 60, 0, 60, 60, this.ctx, 'white'));
+            this.dropZone[x].draw();
+            this.matrix[x] = new Array();
+            for (let y = 0; y < this.h; y++) {
+                let posX = 70 + x * 60;
+                let posY = 100 + y * 60;
+                this.matrix[x][y] = new Circle(posX, posY, ctx, 'white');
+                this.matrix[x][y].draw();
+            }
+        }
     }
 
     /*************************************************  Dibuja el tablero  ************************************************************* */
@@ -71,7 +78,7 @@ class Board {
         let contador = 0;
         for (let i = 0; i < this.matrix.length; i++) {
             for (let j = 0; j < this.matrix[i].length; j++) {
-                if (contador < 4) {
+                if (contador < wc) {
                     if (this.matrix[i][j].isOccupied() && this.matrix[i][j].getId() == Token.getId()) {
                         contador++;
                     } else {
@@ -82,14 +89,14 @@ class Board {
                 }
             }
         }
-        if (contador == 4)
+        if (contador == this.wc)
             return true;
     }
 
     checkHorizontal(Token) {
         let contador = 0;
         for (let i = 0; i < this.matrix.length; i++) {
-            if (contador < 4) {
+            if (contador < wc) {
                 if (this.matrix[i][this.lastTokenY].isOccupied() && this.matrix[i][this.lastTokenY].getId() == Token.getId()) {
                     contador++;
                 } else {
@@ -99,7 +106,7 @@ class Board {
                 return true;
             }
         }
-        if (contador == 4)
+        if (contador == this.wc)
             return true;
     }
 
@@ -111,7 +118,7 @@ class Board {
             contador++;
             i++;
             j++;
-            if (contador == 4)
+            if (contador == this.wc)
                 return true;
         }
         i = this.lastTokenX - 1;
@@ -124,7 +131,7 @@ class Board {
             contador++;
             i--;
             j--;
-            if (contador == 4)
+            if (contador == this.wc)
                 return true;
         }
     }
@@ -139,7 +146,7 @@ class Board {
             contador++;
             i++;
             j--;
-            if (contador == 4)
+            if (contador == this.wc)
                 return true;
         }
         i = this.lastTokenX - 1;
@@ -150,7 +157,7 @@ class Board {
             contador++;
             i--;
             j++;
-            if (contador == 4)
+            if (contador == this.wc)
                 return true;
         }
     }

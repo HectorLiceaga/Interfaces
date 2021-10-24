@@ -2,11 +2,13 @@
 
 /******************************** Character's jump function ************************************************* */
 
-let jump = document.getElementById("character").addEventListener('click', () => {
+document.addEventListener('keydown', (e) => {
+    if(e.code === 'Space'){
     document.getElementById("character").className = "spriteJump"
     document.getElementById("character").addEventListener('animationend', () => {
         document.getElementById("character").className = "sprite"
     })
+    }
 });
 
 /****************************** Character's relative position ************************************************** */
@@ -26,4 +28,3 @@ function createBees() {
 }
 
 setInterval(createBees, 3500);
-

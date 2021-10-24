@@ -1,28 +1,28 @@
 .sprite {
   position: absolute;
-  width: calc(1536px / 6);
-  height: 256px;
-  background: url(spritestrip-1536.png);
+  width: calc(5160px / 43);
+  height: 188px;
+  background: url(../assets/sprites/char_run.png);
   left: 20%;
   bottom: 25%;
-  animation: run 0.65s steps(6) infinite;
+  animation: run 0.65s steps(43) infinite;
 }
 
 .spriteJump {
   position: absolute;
-  width: calc(1536px / 6);
-  height: 256px;
-  background: url(spritestrip-1536.png);
+  width: calc(3708px / 31);
+  height: 183px;
+  background: url(../assets/sprites/char_jump.png);
   left: 20%;
   bottom: 25%;
-  animation: jump 1s both ;
+  animation: jump 1s steps(31) both ;
 }
 
 .bee {
   position: absolute;
   width: 273px;
   height: 282px;
-  background: url(bee.png);
+  background: url(../assets/sprites/bee.png);
   left: 80%;
   bottom: 25%;
   transform: scale(0.5, 0.5);
@@ -36,13 +36,13 @@
 
 .animation_top {
   height: 722px;
-  background: url(new_background_top.png);
+  background: url(../assets/background/new_background_top.png);
   animation: animatedBackground 30s linear infinite;
 }
 
 .animation_bottom {
   height: 469px;
-  background: url(new_background_bottom.png);
+  background: url(../assets/background/new_background_bottom.png);
   animation: animatedBackground 13s linear infinite;
 }
 /*
@@ -60,7 +60,7 @@
 
 @keyframes run {
   100% {
-    background-position: -1536px;
+    background-position: -5160px;
   }
 }
 
@@ -73,6 +73,7 @@
   }
   100% {
     bottom: 25%;
+    background-position: -3708px;
   }
 }
 

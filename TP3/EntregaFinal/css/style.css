@@ -1,54 +1,114 @@
-.sprite {
+.game_container {
+  width: 1300px;
+  height: 600px;
+  overflow: hidden;
+}
+.character {
   position: absolute;
   width: calc(5160px / 43);
   height: 188px;
   background: url(../assets/sprites/char_run.png);
-  left: 20%;
-  bottom: 25%;
-  animation: run 0.65s steps(43) infinite;
+  left: 15%;
+  bottom: 20%;
+  transform: scale(0.7, 0.7);
+  z-index: 1;
+  animation: run 0.8s steps(43) infinite;
 }
 
-.spriteJump {
+.characterJump {
   position: absolute;
   width: calc(3708px / 31);
   height: 183px;
   background: url(../assets/sprites/char_jump.png);
-  left: 20%;
-  bottom: 25%;
-  animation: jump 1s steps(31) both ;
+  left: 15%;
+  bottom: 20%;
+  transform: scale(0.7, 0.7);
+  z-index: 1;
+  animation: jump 1s steps(31) both;
 }
 
 .bee {
   position: absolute;
-  width: 273px;
-  height: 282px;
+  width: 75px;
+  height: 75px;
   background: url(../assets/sprites/bee.png);
+  background-size: cover;
+  left: 80%;
+  bottom: 30%;
+  animation: bee 2.3s 1s ease-in-out;
+}
+
+.bee2 {
+  position: absolute;
+  width: 75px;
+  height: 75px;
+  background: url(../assets/sprites/bee.png);
+  background-size: cover;
   left: 80%;
   bottom: 25%;
-  transform: scale(0.5, 0.5);
-    animation: bee 2.3s  1s ease-in-out;
+  animation: bee 2.3s 0.5s ease-in-out;
+}
+
+.bee3 {
+  position: absolute;
+  width: 75px;
+  height: 75px;
+  background: url(../assets/sprites/bee.png);
+  background-size: cover;
+  left: 80%;
+  bottom: 35%;
+  animation: bee 2.3s 1s ease-in-out;
+}
+
+.honey {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: url(../assets/sprites/honey.png);
+  background-size: cover;
+  left: 90%;
+  bottom: 25%;
+  animation: bee 6.4s linear;
+}
+
+.honeyGrab {/*No pouedo hacerla andar, es para animar la miel cuando la agarras*/
+  transform:scale(0.5) translate(50%, -100%);
+}
+
+.beeHive {
+  position: absolute;
+  width: 75px;
+  height: 75px;
+  background: url(../assets/sprites/beehive.png);
+  background-size: cover;
+  left: 90%;
+  bottom: 26%;
+  animation: bee 6.4s linear;
 }
 
 .bg {
-  width: 2700px;
   position: initial;
 }
 
 .animation_top {
-  height: 722px;
+  height: 60.6%;
   background: url(../assets/background/new_background_top.png);
-  animation: animatedBackground 30s linear infinite;
+  background-size: cover;
+  animation: animatedBackground 35s linear infinite;
 }
 
 .animation_bottom {
-  height: 469px;
+  height: 39.4%;
   background: url(../assets/background/new_background_bottom.png);
-  animation: animatedBackground 13s linear infinite;
+  background-size: cover;
+  animation: animatedBackground 22s linear infinite;
 }
-/*
-.sprite:hover {
-  animation: jump 2s both ease-out;
-}*/
+
+.hidden {
+  opacity: 0;
+}
+
+
 @keyframes animatedBackground {
   from {
     background-position: 0px;
@@ -66,19 +126,25 @@
 
 @keyframes jump {
   45% {
-    bottom: 50%;
+    bottom: 55%;
   }
-  55% {
-    bottom: 50%;
+  65% {
+    bottom: 55%;
   }
   100% {
-    bottom: 25%;
-    background-position: -3708px;
+    bottom: 20%;
   }
 }
 
 @keyframes bee {
-    100% {
-        left: 0%;
-    }
+  100% {
+    left: -10%;
+  }
+}
+
+@keyframes honey {
+  25%{scale: 1.5;}
+  50%{scale: 0.5;}
+  75%{scale: 1.5;}
+  100%{scale: 0.5;}
 }

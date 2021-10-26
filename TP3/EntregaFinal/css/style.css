@@ -2,17 +2,35 @@
   width: 1300px;
   height: 600px;
   overflow: hidden;
+  position: relative;
 }
+
+.score{
+  width: 50px;
+  height: 50px;
+  margin: 5px;
+  position: absolute;
+  display: flex;
+  font-size: 37px;
+}
+
+.score img{
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+}
+
 .character {
   position: absolute;
   width: calc(5160px / 43);
   height: 188px;
   background: url(../assets/sprites/char_run.png);
   left: 15%;
-  bottom: 20%;
+  bottom: 18%;
   transform: scale(0.7, 0.7);
   z-index: 1;
   animation: run 0.8s steps(43) infinite;
+  border: 1px solid red;
 }
 
 .characterJump {
@@ -21,21 +39,23 @@
   height: 183px;
   background: url(../assets/sprites/char_jump.png);
   left: 15%;
-  bottom: 20%;
+  bottom: 18%;
   transform: scale(0.7, 0.7);
   z-index: 1;
-  animation: jump 1s steps(31) both;
+  animation: jump 1.5s steps(31) both;
+  border: 1px solid red;
 }
 
 .bee {
   position: absolute;
-  width: 75px;
-  height: 75px;
+  width: 70px;
+  height: 70px;
   background: url(../assets/sprites/bee.png);
   background-size: cover;
   left: 80%;
   bottom: 30%;
   animation: bee 2.3s 1s ease-in-out;
+  border: 1px solid red;
 }
 
 .bee2 {
@@ -68,11 +88,19 @@
   background-size: cover;
   left: 90%;
   bottom: 25%;
-  animation: bee 6.4s linear;
+  animation: honey 6.4s linear;
+  border: 1px solid red;
 }
 
-.honeyGrab {/*No pouedo hacerla andar, es para animar la miel cuando la agarras*/
-  transform:scale(0.5) translate(50%, -100%);
+.honeyGrab {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: url(../assets/sprites/honey.png);
+  background-size: cover;
+  left: 18%;
+  bottom: 25%;/*No pouedo hacerla andar, es para animar la miel cuando la agarras*/
+  animation: honeyGrab 1s linear 0.2s;
 }
 
 .beeHive {
@@ -82,8 +110,9 @@
   background: url(../assets/sprites/beehive.png);
   background-size: cover;
   left: 90%;
-  bottom: 26%;
+  bottom: 24%;
   animation: bee 6.4s linear;
+  border: 1px solid red;
 }
 
 .bg {
@@ -132,7 +161,7 @@
     bottom: 55%;
   }
   100% {
-    bottom: 20%;
+    bottom: 18%;
   }
 }
 
@@ -143,8 +172,33 @@
 }
 
 @keyframes honey {
-  25%{scale: 1.5;}
-  50%{scale: 0.5;}
-  75%{scale: 1.5;}
-  100%{scale: 0.5;}
+  25%{
+    transform: scale(1.2,1.2);
+  }
+  50%{
+    transform: scale(0.7,0.7);
+  }
+  75%{
+    transform: scale(1.2,1.2);
+  }
+  100%{
+    left: -10%;
+    transform: scale(0.7,0.7);
+  }
+}
+
+@keyframes honeyGrab{
+  0%{
+    bottom: 25%;
+  }
+  5%{
+    bottom: 40%;
+  }
+  50%{
+    bottom: 40%;
+  }
+  100%{
+    left: -10%;
+    bottom: 100%;
+  }
 }

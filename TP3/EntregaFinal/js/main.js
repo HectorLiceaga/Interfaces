@@ -4,9 +4,12 @@ let character = document.getElementById("character");
 let bee = document.getElementById("bee");
 let honey = document.getElementById("honey");
 let beehive = document.getElementById("beehive");
+let score = document.querySelector('.honey_count');
+let honeyGrab = document.querySelector('#honeyGrab');
 let counter = 0;
 let end = false;
 let wc = 5;
+
 
 
 /******************************** Character's jump function ************************************************* */
@@ -93,9 +96,15 @@ function checkHoneyCollision() {
         && honeyPos.x + honeyPos.width > characterPos.x
         && honeyPos.height + honeyPos.y > characterPos.y) {
         counter++;
-        console.log(counter) //agregar al html de alguna forma
+        score.innerHTML= "X" + counter;
         honey.classList.remove("honey");
         honey.classList.add("hidden");
+        honeyGrab.classList.remove('hidden');
+        honeyGrab.classList.add('honeyGrab');
+        honeyGrab.addEventListener('animationend',()=>{
+            honeyGrab.classList.add('hidden');
+            honeyGrab.classList.remove('honeyGrab');
+        });
     }
 }
 
@@ -110,7 +119,7 @@ let gameInterval = setInterval(() => {
     } else {
         clearInterval(gameInterval);
     }
-}, 500);
+}, 100);
 
 
 function gameOver(bool) {// presentacion pantalla "Game Over" jugar de nuevo?
@@ -126,3 +135,5 @@ function checkCounter() {
         gameOver(true);
     }
 }
+
+

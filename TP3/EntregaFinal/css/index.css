@@ -1,0 +1,250 @@
+/*.char_selection {
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr;
+    grid-template-rows: auto;
+}
+
+.explanation {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+
+
+.character {
+    position: absolute;
+    width: calc(5160px / 43);
+    height: 188px;
+    background: url(../assets/sprites/char_run.png);
+    transform: scale(0.7, 0.7);
+    animation: run 0.8s steps(43) infinite;
+  }
+  
+  .characterJump {
+    position: absolute;
+    width: calc(3708px / 31);
+    height: 183px;
+    background: url(../assets/sprites/char_jump.png);
+    left: 15%;
+    bottom: 18%;
+    transform: scale(0.7, 0.7);
+    z-index: 1;
+    animation: jump 1s steps(31) both infinite;
+  }
+  
+  .honey {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: url(../assets/sprites/honey.png);
+    background-size: cover;
+
+    animation: honey 3.2s linear infinite;
+  }
+
+  
+  @keyframes run {
+    100% {
+      background-position: -5160px;
+    }
+  }
+
+  @keyframes jump {
+    40% {
+      bottom: 30%;
+    }
+    65% {
+      bottom: 30%;
+    }
+    100% {
+      bottom: 18%;
+    }
+  }
+
+  
+@keyframes honey {
+    0% {
+        transform: scale(0.7, 0.7);
+    }
+    25% {
+      transform: scale(1.2, 1.2);
+    }
+    50% {
+      transform: scale(0.7, 0.7);
+    }
+    75% {
+      transform: scale(1.2, 1.2);
+    }
+    100% {
+      transform: scale(0.7, 0.7);
+    }
+  }*/
+
+  @import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Patrick Hand', cursive;
+  }
+
+  body{
+    background: url(../assets/background/new_background.png);
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .header{
+    width: 1200px;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .header h1{
+    margin: 5px;
+    text-align: center;
+    font-weight: 900;
+    font-size: 80px;
+  }
+
+.header p{
+  margin: 5px 30px;
+  padding: 2px;
+  text-align: center;
+  font-size: 20px;
+}
+
+.char_selection{
+  width: 81%;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.char_selection p{
+  width: 96px;
+  height: 73px;
+  text-align: center;
+  font-size: 28px
+}
+
+.character{
+  margin: 10px;
+  width: calc(5160px / 43);
+    height: 188px;
+    background: url(../assets/sprites/char_run.png);
+    transform: scale(0.7, 0.7);
+    animation: run 0.8s steps(43) infinite;
+}
+
+.selector{
+  float: left;
+  display: flex;
+  justify-content: space-between;
+}
+
+.explanation{
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.explanation .run{
+  margin: 10px;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+}
+
+.explanation p{
+  background: #f1c40f;
+  padding: 3px;
+  height: 34px;
+  margin: 7px;
+  font-size: 20px;
+  border-radius: 3px;
+}
+
+.honey {
+  margin: 10px;
+  padding: 5px;
+  width: 50px;
+  height: 50px;
+  background: url(../assets/sprites/honey.png);
+  background-size: cover;
+  animation: honey 3.2s linear infinite;
+}
+
+.explanation .jump{
+  margin: 10px;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+}
+
+.characterJump {
+  width: calc(3708px / 31);
+  height: 183px;
+  background: url(../assets/sprites/char_jump.png);
+  left: 15%;
+  bottom: 18%;
+  transform: scale(0.7, 0.7);
+  animation: jump 1s steps(31) both infinite;
+}
+
+.btn{
+  margin: 0 auto;
+  padding: 5px;
+  font-size: 30px;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  background: #f1c40f;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+@keyframes run {
+  100% {
+    background-position: -5160px;
+  }
+}
+
+@keyframes honey {
+  0% {
+      transform: scale(0.7, 0.7);
+  }
+  25% {
+    transform: scale(1.2, 1.2);
+  }
+  50% {
+    transform: scale(0.7, 0.7);
+  }
+  75% {
+    transform: scale(1.2, 1.2);
+  }
+  100% {
+    transform: scale(0.7, 0.7);
+  }
+}
+
+@keyframes jump {
+  40% {
+    bottom: 30%;
+  }
+  65% {
+    bottom: 30%;
+  }
+  100% {
+    bottom: 18%;
+  }
+}

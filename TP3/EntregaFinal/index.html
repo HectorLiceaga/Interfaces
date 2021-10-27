@@ -1,32 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style1.css">
+    <!--<link rel="stylesheet" href="style.css">-->
+    <link rel="stylesheet" href="css/index.css">
     <title>Jhonny Bee</title>
 </head>
+
 <body>
-    <div>
+    <div class="header">
         <h1 class="title">
             Jhonny Bee
         </h1>
         <p>Jhonny Bee tiene que recoger la miel esquivando las abejas y las colmenas
-            xq olvidó su traje en casa.
+            porque olvidó su traje en casa.
         </p>
     </div>
     <section class="char_selection">
         <p>Elige tu personaje</p>
-        <div id="character" class="character"></div>
-        <!--<div id="character" class="character"></div>-->
+        <div class="selector">
+            <div id="character" class="character"></div>
+            <div id="character" class="character"></div>
+        </div>
     </section>
     <div class="explanation">
-        <p>Recoge 5 unidades de miel para completar el juego</p>
-        <div id="honey" class="honey"></div>
-        <p>Esquiva las abejas y colmenas que vienen hacia ti presionando <B>ESPACIO</B></p>
-        <div id="character" class="characterJump"></div>
+        <div class="run">
+            <p>Recoge 5 unidades de miel para completar el juego</p>
+            <div id="honey" class="honey"></div>
+        </div>
+        <div class="jump">
+            <p>Esquiva las abejas y colmenas que vienen hacia ti presionando <B>ESPACIO</B></p>
+            <div id="character" class="characterJump"></div>
+        </div>
     </div>
-    <a href="game.html">Comenzar</a>
+    <a href="game.html" class="btn">Comenzar</a>
 </body>
+
 </html>

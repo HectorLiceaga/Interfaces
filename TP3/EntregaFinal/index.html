@@ -1,35 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="style1.css">
+    <title>Jhonny Bee</title>
 </head>
-
 <body>
-    <div class="game_intro hidden"></div>
-    <div id="gameCont" class="game_container">
-        <div class="score">
-            <img src="assets/sprites/honey.png" alt="">
-            <span class="honey_count">X0</span>
-        </div>
-        <div id="character" class="character"></div>
-        <div id="bee" class="hidden"></div>
-        <div id="beehive" class="hidden"></div>
-        <div id="honey" class="hidden"></div>
-        <div id="honeyGrab" class="hidden"></div>
-        <div id="syringe" class="hidden"></div>
-        <div class="bg animation_top"></div>
-        <div class="bg animation_bottom"></div>
-        
+    <div>
+        <h1 class="title">
+            Jhonny Bee
+        </h1>
+        <p>Jhonny Bee tiene que recoger la miel esquivando las abejas y las colmenas
+            xq olvidó su traje en casa.
+        </p>
     </div>
-
-    <script src="js/main.js"></script>
-    <script src="js/Character.js"></script>
-    <script src="js/Bee.js"></script>
+    <section class="char_selection">
+        <p>Elige tu personaje</p>
+        <div id="character" class="character"></div>
+        <!--<div id="character" class="character"></div>-->
+    </section>
+    <div class="explanation">
+        <p>Recoge 5 unidades de miel para completar el juego</p>
+        <div id="honey" class="honey"></div>
+        <p>Esquiva las abejas y colmenas que vienen hacia ti presionando <B>ESPACIO</B></p>
+        <div id="character" class="characterJump"></div>
+    </div>
+    <a href="game.html">Comenzar</a>
 </body>
-
 </html>

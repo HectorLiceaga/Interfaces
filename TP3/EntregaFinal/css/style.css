@@ -5,7 +5,7 @@
   position: relative;
 }
 
-.score{
+.score {
   width: 50px;
   height: 50px;
   margin: 5px;
@@ -14,7 +14,7 @@
   font-size: 37px;
 }
 
-.score img{
+.score img {
   width: 40px;
   height: 40px;
   object-fit: cover;
@@ -42,7 +42,7 @@
   bottom: 18%;
   transform: scale(0.7, 0.7);
   z-index: 1;
-  animation: jump 1.5s steps(31) both;
+  animation: jump 1.3s steps(31) both;
   border: 1px solid red;
 }
 
@@ -99,7 +99,7 @@
   background: url(../assets/sprites/honey.png);
   background-size: cover;
   left: 18%;
-  bottom: 25%;/*No pouedo hacerla andar, es para animar la miel cuando la agarras*/
+  bottom: 25%; /*No pouedo hacerla andar, es para animar la miel cuando la agarras*/
   animation: honeyGrab 1s linear 0.2s;
 }
 
@@ -137,7 +137,6 @@
   opacity: 0;
 }
 
-
 @keyframes animatedBackground {
   from {
     background-position: 0px;
@@ -154,11 +153,11 @@
 }
 
 @keyframes jump {
-  45% {
-    bottom: 55%;
+  40% {
+    bottom: 60%;
   }
   65% {
-    bottom: 55%;
+    bottom: 60%;
   }
   100% {
     bottom: 18%;
@@ -172,32 +171,32 @@
 }
 
 @keyframes honey {
-  25%{
-    transform: scale(1.2,1.2);
+  25% {
+    transform: scale(1.2, 1.2);
   }
-  50%{
-    transform: scale(0.7,0.7);
+  50% {
+    transform: scale(0.7, 0.7);
   }
-  75%{
-    transform: scale(1.2,1.2);
+  75% {
+    transform: scale(1.2, 1.2);
   }
-  100%{
+  100% {
     left: -10%;
-    transform: scale(0.7,0.7);
+    transform: scale(0.7, 0.7);
   }
 }
 
-@keyframes honeyGrab{
-  0%{
+@keyframes honeyGrab {
+  0% {
     bottom: 25%;
   }
-  5%{
+  5% {
     bottom: 40%;
   }
-  50%{
+  50% {
     bottom: 40%;
   }
-  100%{
+  100% {
     left: -10%;
     bottom: 100%;
   }

@@ -32,7 +32,6 @@
   transform: scale(0.7, 0.7);
   z-index: 1;
   animation: run 0.8s steps(43) infinite;
-  border: 1px solid red;
 }
 
 .characterJump {
@@ -45,7 +44,6 @@
   transform: scale(0.7, 0.7);
   z-index: 1;
   animation: jump 1.3s steps(31) both;
-  border: 1px solid red;
 }
 
 .bee {
@@ -57,30 +55,8 @@
   left: 80%;
   bottom: 30%;
   animation: bee 2.3s 1s ease-in-out;
-  border: 1px solid red;
 }
 
-.bee2 {
-  position: absolute;
-  width: 75px;
-  height: 75px;
-  background: url(../assets/sprites/bee.png);
-  background-size: cover;
-  left: 80%;
-  bottom: 25%;
-  animation: bee 2.3s 0.5s ease-in-out;
-}
-
-.bee3 {
-  position: absolute;
-  width: 75px;
-  height: 75px;
-  background: url(../assets/sprites/bee.png);
-  background-size: cover;
-  left: 80%;
-  bottom: 35%;
-  animation: bee 2.3s 1s ease-in-out;
-}
 
 .honey {
   position: absolute;
@@ -91,7 +67,6 @@
   left: 90%;
   bottom: 25%;
   animation: honey 6.4s linear;
-  border: 1px solid red;
 }
 
 .honeyGrab {
@@ -101,7 +76,7 @@
   background: url(../assets/sprites/honey.png);
   background-size: cover;
   left: 18%;
-  bottom: 25%; /*No pouedo hacerla andar, es para animar la miel cuando la agarras*/
+  bottom: 25%; 
   animation: honeyGrab 1s linear 0.2s;
 }
 
@@ -114,7 +89,6 @@
   left: 90%;
   bottom: 24%;
   animation: bee 6.4s linear;
-  border: 1px solid red;
 }
 
 .bg {

@@ -15,9 +15,12 @@ body{
 
 .index{
     margin: 20px 5px;
-    width: 40%;
+    width: 50%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .index h1{
@@ -41,7 +44,7 @@ body{
 
 .form{
     background-color: #fff;
-    width: 63%;
+    width: 50%;
     height: 100vh;
     padding: 4.5em;
     border-radius: 40px 0px 0px 40px;
@@ -56,8 +59,20 @@ body{
     margin-bottom: .5em;
 }
 
-.register{
+.reg_container p{
+    padding-top: 2.5em;
     font-weight: 300;
+
+}
+
+.reg_container{
+    margin-top: 3em;
+    display: grid;
+}
+
+.register{
+    border-top: 1px solid #706c6c50 ;
+    gap: 1em;
 }
 
 .link{
@@ -115,11 +130,12 @@ body{
     background: #BFC882;
     color: black;
     font-family: 'Roboto', sans-serif;
-    font-weight: 300;
+    font-weight: 700;
     font-size: 1rem;
     padding: .8em 0;
     border: none;
     border-radius: .5em;
+    box-shadow: 1px 1px 3px #bfc882;
 }
 
 .line{
@@ -150,5 +166,4 @@ body{
     border: 2px solid #BFC882;
     background: white;
     color: #BFC882;
-    font-weight: 700;
 }

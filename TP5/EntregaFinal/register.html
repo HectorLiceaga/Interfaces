@@ -4,23 +4,55 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/index.css">
     <title>Document</title>
 </head>
 <body>
-    <form class="form_container">
-        <div class="input_group">
-            <input type="text" id="user" class="input" placeholder=" ">
-            <label for="user" class="label">Usuario:</label>
-            <span class="line"></span>
+    <div class="index">
+        <h1 class="logo">Cavysa</h1>
+        <p>La comunidad para veterinarios, estudiantes y voluntarios de organizaciones protectoras de animales</p>
+
+        <div class="image">
+            <img src="assets/images/vet.jpg" alt="Vets whit smaile dog">
         </div>
-        <div class="input_group">
-            <input type="password" id="pass" class="input" placeholder=" ">
-            <label for="pass" class="label">Contraseña:</label>
-            <span class="line"></span>
-        </div>
-        <input type="submit" class="btn" value="Entrar">
-    </form>
+    </div>
+    <div class="form">
+        <h2 class="title">Registrarse</h2>
+
+        <form class="form_container">
+            <div class="input_group">
+                <input type="text" id="user" class="input" placeholder=" ">
+                <label for="user" class="label">Usuario:</label>
+                <span class="line"></span>
+            </div>
+            <div class="input_group">
+                <input type="password" id="pass" class="input" placeholder=" ">
+                <label for="pass" class="label">Contraseña:</label>
+                <span class="line"></span>
+            </div>
+            <div class="input_group">
+                <input type="text" id="name" class="input" placeholder=" ">
+                <label for="name" class="label">Nombre:</label>
+                <span class="line"></span>
+            </div>
+            <div class="input_group">
+                <input type="text" id="surname" class="input" placeholder=" ">
+                <label for="surname" class="label">Apellido:</label>
+                <span class="line"></span>
+            </div>
+            <div class="input_group">
+                <select id="section" class="input" placeholder=" ">
+                    <option value="vet">Veterinario</option>
+                    <option value="student">Estudiante</option>
+                    <option value="volunteer">Voluntarios en asociaciones o similar</option>
+                    <option value="other">Otros</option>
+                </select>
+                <label for="section" class="label">Sector donde pertenece:</label>
+                <span class="line"></span>
+            </div>
+            <a href="wall.html"><input type="button" class="btn" value="Registrarse"></a>
+        </form>
+    </div>
 
 </body>
 </html>

@@ -25,20 +25,24 @@ body {
   padding: 30px 0px;
 }
 
-.wrapper .sidebar .suggestions{
-    position: absolute;
-    right: opx;
+.wrapper .sidebar a{
+    text-decoration: none;
 }
 
-.wrapper .sidebar h2 {
+.wrapper .sidebar .suggestions{
+    position: absolute;
+}
+
+.wrapper .sidebar ul h2 {
   color: black;
   text-transform: uppercase;
-  text-align: center;
-  margin-bottom: 30px;
+  margin-left: 17px;
+  margin-bottom: 25px;
 }
 
 .wrapper .sidebar ul li {
   padding: 15px;
+  margin-left: 2px;
 }
 
 .wrapper .sidebar ul li a {
@@ -52,56 +56,91 @@ body {
 }
 
 .wrapper .sidebar ul li:hover {
-  background-color: #705F8C;
-  border-radius: 9999px;
+  background-color: #5E9176;
+  border-radius: 25px 0px 0px 25px;
 }
 
 .wrapper .sidebar ul li:hover a {
   color: #fff;
 }
 
-.wrapper .sidebar .social_media {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-}
-
-.wrapper .sidebar .social_media a {
-  display: block;
-  width: 40px;
-  background: #705F8C;
-  height: 40px;
-  line-height: 45px;
-  text-align: center;
-  margin: 0 5px;
-  color: #bdb8d7;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-}
-
 .wrapper .main_content {
-  width: 100%;/*
-  margin-left: 200px;*/
+  width: 100%;
 }
 
-.wrapper .main_content .header {
+.wrapper .main_content .publish {
   padding: 20px;
   background: #fff;
   color: #717171;
   border-bottom: 1px solid #e0e4e8;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
-.wrapper .main_content .info {
-  margin: 20px;
-  color: #717171;
-  line-height: 25px;
+.wrapper .main_content .publish .profile_pic{
+    width: 50px;
+    height: 50px;
+    margin: 0px 5px;
+    background-image: url("../assets/images/drDolittle.jpg");
+    background-size: cover;
+    border-radius: 2em;
+    border: 1px solid #717171;
 }
 
-.wrapper .main_content .info div {
-  margin-bottom: 20px;
+.wrapper .main_content .publish .profile_pic + div{
+    width: 80%;
+    flex-direction: column;
 }
+
+.wrapper .main_content .publish .profile_pic + div .text_area{
+    width: 100%;
+    margin-bottom: 10px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+}
+
+.icons_cont{
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 1.5em;
+    align-items: center;
+}
+
+.wrapper .main_content .publish div input{
+    border-radius: 2em;
+    padding: 5px;;
+}
+
+.btn{
+    width: 7em;
+    height: 2em;
+    background: #BFC882;
+    color: black;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: .5em 0;
+    border: none;
+    border-radius: 2em;
+    box-shadow: 1px 1px 3px #bfc882;
+}
+.wall{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.wall .card {
+    display: flex;
+    width: 80%;
+    height: 200px;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 5px;
+    box-shadow: 0 0 6px 0 rgb(0 0 0 / 60%);
+}
+
+
 
 @media (max-height: 500px) {
   .social_media {

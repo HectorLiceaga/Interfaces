@@ -75,7 +75,7 @@ body {
   color: #717171;
   border-bottom: 1px solid #e0e4e8;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: flex-start;
 }
 
@@ -198,7 +198,7 @@ body {
 }
 
 .card-footer li {
-  color: #999999;
+  color: black;
   font-size: 10px;
   height: 1.5rem;
   letter-spacing: 1px;
@@ -209,8 +209,12 @@ body {
   white-space: nowrap;
 }
 
+.card-footer li i {
+  font-size: 20px;
+}
+
 .card-footer li a {
-  color: #999999;
+  color: black;
   text-decoration: none;
 }
 
@@ -224,7 +228,8 @@ body {
 
 .numero {
   position: relative;
-  top: -0.5rem;
+  top: -0.2rem;
+  font-size: 15px;
 }
 
 .icon-star,
@@ -236,9 +241,47 @@ body {
   width: 24px;
 }
 
-.icon-star:hover,
-.icon-bubble:hover {
+.fa-heart:hover {
   fill: #ff4d4d;
+}
+
+.card-author .almiron::before {
+  background: url(/assets/images/fede.jpg);
+  background-size: cover;
+  border-radius: 50%;
+  content: " ";
+  display: inline-block;
+  height: 32px;
+  margin-right: .5rem;
+  position: relative;
+  top: 8px;
+  width: 32px;
+}
+
+.card-author .rodriguez::before {
+  background: url(/assets/images/carlos.jpg);
+  background-size: cover;
+  border-radius: 50%;
+  content: " ";
+  display: inline-block;
+  height: 32px;
+  margin-right: .5rem;
+  position: relative;
+  top: 8px;
+  width: 32px;
+}
+
+.card-author .vazquez::before {
+  background: url(/assets/images/caro.jpg);
+  background-size: cover;
+  border-radius: 50%;
+  content: " ";
+  display: inline-block;
+  height: 32px;
+  margin-right: .5rem;
+  position: relative;
+  top: 8px;
+  width: 32px;
 }
 
 @media (max-height: 500px) {

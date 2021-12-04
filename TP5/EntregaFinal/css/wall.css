@@ -14,6 +14,7 @@ body {
 }
 
 .wrapper {
+  width: 100%;
   display: flex;
   position: relative;
 }
@@ -125,22 +126,120 @@ body {
     border-radius: 2em;
     box-shadow: 1px 1px 3px #bfc882;
 }
+
 .wall{
     display: flex;
     flex-wrap: wrap;
 }
 
 .wall .card {
-    display: flex;
-    width: 80%;
-    height: 200px;
-    align-items: center;
-    justify-content: space-evenly;
-    border-radius: 5px;
-    box-shadow: 0 0 6px 0 rgb(0 0 0 / 60%);
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 4px 2px -2px;
+  font-weight: 100;
+  margin: 1em auto;
+  width: 80%;
 }
 
+.card-author {
+  margin: 0 auto;
+  padding-top: .125rem;
+  width: 80%;
+}
 
+.card-author .romero::before {
+  background: url(/assets/images/drRomero.jpg);
+  background-size: cover;
+  border-radius: 50%;
+  content: " ";
+  display: inline-block;
+  height: 32px;
+  margin-right: .5rem;
+  position: relative;
+  top: 8px;
+  width: 32px;
+}
+
+.card-author h3 {
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.card-body {
+  margin: 0 auto;
+  width: 80%;
+}
+
+.card-summary p {
+  margin: 0.7em 0;
+  color: #4d4d4d;
+}
+
+.card-footer {
+  border-top: 1px solid #e6e6e6;
+  margin: 0 auto;
+  padding-bottom: .125rem;
+  width: 80%;
+}
+
+.card-footer ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: row;
+  justify-content: flex-end;
+  padding-left: 0;
+}
+
+.card-footer li:first-child {
+  margin-right: auto;
+}
+
+.card-footer li + li {
+  margin-left: .5rem;
+}
+
+.card-footer li {
+  color: #999999;
+  font-size: 10px;
+  height: 1.5rem;
+  letter-spacing: 1px;
+  line-height: 1.5rem;
+  text-align: center;
+  text-transform: uppercase;
+  position: relative;
+  white-space: nowrap;
+}
+
+.card-footer li a {
+  color: #999999;
+  text-decoration: none;
+}
+
+.comments {
+  margin-right: 1rem;
+}
+
+.published-date {
+  padding: 0 .5rem;
+}
+
+.numero {
+  position: relative;
+  top: -0.5rem;
+}
+
+.icon-star,
+.icon-bubble {
+  fill: #999999;
+  height: 24px;
+  margin-right: .5rem;
+  transition: .25s ease;
+  width: 24px;
+}
+
+.icon-star:hover,
+.icon-bubble:hover {
+  fill: #ff4d4d;
+}
 
 @media (max-height: 500px) {
   .social_media {

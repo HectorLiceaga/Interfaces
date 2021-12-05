@@ -174,6 +174,32 @@ body {
   color: #4d4d4d;
 }
 
+.card-summary img{
+  width: 30%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 1em;
+}
+
+.more_photo{
+  display: flex;
+  float: right;
+  height: 160px;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  font-weight: 700;
+  font-size: 30px;
+}
+
+.more_photo a{
+  text-decoration: none;
+}
+
+.ocult{
+  display: none;
+}
+
 .card-footer {
   border-top: 1px solid #e6e6e6;
   margin: 0 auto;
@@ -218,10 +244,6 @@ body {
   text-decoration: none;
 }
 
-.comments {
-  margin-right: 1rem;
-}
-
 .published-date {
   padding: 0 .5rem;
 }
@@ -232,13 +254,15 @@ body {
   font-size: 15px;
 }
 
-.icon-star,
-.icon-bubble {
+.card-footer ul li .far,
+.card-footer ul li .fas {
   fill: #999999;
   height: 24px;
   margin-right: .5rem;
+  margin-top: .2rem;
+  margin-bottom: .2rem;
   transition: .25s ease;
-  width: 24px;
+  width: 15px;
 }
 
 .fa-heart:hover {
@@ -258,8 +282,8 @@ body {
   width: 32px;
 }
 
-.card-author .rodriguez::before {
-  background: url(/assets/images/carlos.jpg);
+.card-author .dross::before {
+  background: url(/assets/images/Ángel_David_Revilla_2019.png);
   background-size: cover;
   border-radius: 50%;
   content: " ";

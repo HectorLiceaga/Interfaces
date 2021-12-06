@@ -155,11 +155,11 @@ body {
   border-radius: 50%;
   content: " ";
   display: inline-block;
-  height: 60px;
+  height: 100px;
+  width: 100px;
   margin-right: .5rem;
   position: relative;
-  top: 10rem;
-  width: 60px;
+  top: 7rem;
 }
 
 .card-author {

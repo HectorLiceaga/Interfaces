@@ -93,7 +93,7 @@ body{
 .input{
     width: 100%;
     background: none;
-    color: #706c6c;
+    color: black;
     font-size: 1rem;
     padding: .6em .3em;
     border: none;
@@ -103,7 +103,7 @@ body{
 }
 
 .input:not(:placeholder-shown){
-    color: #4d4646;
+    color: #161212;
 }
 
 .input:focus + .label,
@@ -114,7 +114,7 @@ body{
 }
 
 .label{
-    color: #5757577e;
+    color: #3C3939;
     cursor: pointer;
     position: absolute;
     top: 0;

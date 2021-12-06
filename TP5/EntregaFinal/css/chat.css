@@ -1,0 +1,164 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    display: flex;
+    background-color: #fff;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    position: relative;
+}
+
+.sidebar {
+    width: 16%;
+    height: 100%;
+    background: #BFC882;
+    padding: 0px;
+}
+
+.sidebar a {
+    text-decoration: none;
+}
+
+.sidebar h2 {
+    color: black;
+    text-transform: uppercase;
+    margin-top: 25px;
+    margin-left: 17px;
+    margin-bottom: 25px;
+}
+
+.sidebar ul li {
+    padding: 15px;
+    margin-left: 2px;
+}
+
+.sidebar ul li a {
+    color: black;
+    display: block;
+    text-decoration: none;
+} 
+
+.sidebar ul li a .fas {
+    width: 25px;
+}
+
+.sidebar ul li:hover {
+    background-color: #5E9176;
+    border-radius: 25px 0px 0px 25px;
+}
+
+.sidebar ul li:hover a {
+    color: #fff;
+}
+
+.chat_list{
+    width: 30%;
+    background-color: rgb(231, 243, 212);
+}
+
+.chat_list h4{
+    margin: 1em;
+    font-size: 24px;
+}
+
+form{
+    width: 100%;
+    display: flex;
+    float: left;
+    margin: 1em;
+}
+
+form input[type=text] {
+    width: 79%;
+    float: left;
+    padding: 6px;
+    margin-top: 8px;
+    font-size: 17px;
+    border: none;
+    border-radius: 8px 0px 0px 8px;
+}
+
+form button[type=submit] {
+    width: 12%;
+    float: left;
+    padding: 6px 10px;
+    margin-top: 8px;
+    margin-right: 16px;
+    background: #ddd;
+    font-size: 17px;
+    border: none;
+    border-radius: 0px 8px 8px 0px;
+    cursor: pointer;
+}
+
+.clearfix{
+    float: none;
+    clear: both;
+}
+
+.list{
+    margin: 1em;
+}
+
+.list ul li{
+    margin: 2px;
+    background: #ffffff50;
+    list-style: none;
+    padding: .5em;
+    font-weight: 700;
+    vertical-align: middle;
+}
+
+.list ul .first::before{
+    background: url(/assets/images/drRomero.jpg);
+  background-size: cover;
+  border-radius: 50%;
+  content: " ";
+  display: inline-block;
+  height: 32px;
+  margin-right: .5rem;
+  position: relative;
+  top: 4px;
+  width: 32px;
+}
+
+.list ul .second::before{
+    background: url(/assets/images/Ángel_David_Revilla_2019.png);
+  background-size: cover;
+  border-radius: 50%;
+  content: " ";
+  display: inline-block;
+  height: 32px;
+  margin-right: .5rem;
+  position: relative;
+  top: 4px;
+  width: 32px;
+}
+
+.list ul .third::before{
+    background: url(/assets/images/caro.jpg);
+  background-size: cover;
+  border-radius: 50%;
+  content: " ";
+  display: inline-block;
+  height: 32px;
+  margin-right: .5rem;
+  position: relative;
+  top: 4px;
+  width: 32px;
+}
+
+.list ul li span{
+    font-weight: 300;
+    font-size: 12px;
+    float: right;
+    padding-top: 19px;
+}

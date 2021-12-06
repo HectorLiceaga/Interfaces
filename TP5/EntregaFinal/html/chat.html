@@ -19,20 +19,132 @@
             <li><a href="#"><i class="fas fa-user-circle"></i>Cuenta</a></li>
         </ul>
     </div>
-    <div class="chat_list">
-        <h4>Mensajes</h4>
-        <form action="">
-            <input type="text" placeholder="Buscar">
-            <button type="submit"><i class="fa fa-search"></i></button>
-        </form>
-        <div class="clearfix"></div>
-        <div class="list">
+    <div class="chat_container">
+        <aside>
+            <header>
+                <input type="text" placeholder="Buscar">
+            </header>
             <ul>
-                <li class="first">Doctor Romero<span>hoy 12:30</span></li>
-                <li class="second">Dross<span>hoy 12:30</span></li>
-                <li class="third">Carolina Vazquez<span>hoy 12:30</span></li>
+                <li>
+                    <img src="/assets/images/carlos.jpg" alt="">
+                    <div>
+                        <h2>Carlos</h2>
+                        <h3>
+                            <span class="status orange"></span>
+                            offline
+                        </h3>
+                    </div>
+                </li>
+                <li>
+                    <img src="/assets/images/caro.jpg" alt="">
+                    <div>
+                        <h2>Carolina Vazquez</h2>
+                        <h3>
+                            <span class="status green"></span>
+                            online
+                        </h3>
+                    </div>
+                </li>
+                <li>
+                    <img src="/assets/images/drRomero.jpg" alt="">
+                    <div>
+                        <h2>Doctor Romero</h2>
+                        <h3>
+                            <span class="status orange"></span>
+                            offline
+                        </h3>
+                    </div>
+                </li>
+                <li>
+                    <img src="/assets/images/fede.jpg" alt="">
+                    <div>
+                        <h2>Federico</h2>
+                        <h3>
+                            <span class="status green"></span>
+                            online
+                        </h3>
+                    </div>
+                </li>
+                
             </ul>
-        </div>
+        </aside>
+        <main>
+            <header>
+                <img src="/assets/images/drRomero.jpg" alt="">
+                <div>
+                    <h2>Mensajes Doctor Romero</h2>
+                    <h3>cantida de mensajes: 1902</h3>
+                </div>
+            </header>
+            <ul class="chat">
+                <li class="you">
+                    <div class="entete">
+                        <span class="status green"></span>
+                        <h2>Doctor Romero</h2>
+                        <h3>10:12AM, hace 2 dias</h3>
+                    </div>
+                    <div class="message">
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+                    </div>
+                </li>
+                <li class="me">
+                    <div class="entete">
+                        <h3>06:00AM, ayer</h3>
+                        <h2>Tú</h2>
+                        <span class="status blue"></span>
+                    </div>
+                    <div class="message">
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+                    </div>
+                </li>
+                <li class="me">
+                    <div class="entete">
+                        <h3>06:01AM, ayer</h3>
+                        <h2>Tú</h2>
+                        <span class="status blue"></span>
+                    </div>
+                    <div class="message">
+                        OK
+                    </div>
+                </li>
+                <li class="you">
+                    <div class="entete">
+                        <span class="status green"></span>
+                        <h2>Doctor Romero</h2>
+                        <h3>10:12AM, hoy</h3>
+                    </div>
+                    <div class="message">
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+                    </div>
+                </li>
+                <li class="me">
+                    <div class="entete">
+                        <h3>10:12AM, hoy</h3>
+                        <h2>Tú</h2>
+                        <span class="status blue"></span>
+                    </div>
+                    <div class="message">
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+                    </div>
+                </li>
+                <li class="me">
+                    <div class="entete">
+                        <h3>10:12AM, hoy</h3>
+                        <h2>Tú</h2>
+                        <span class="status blue"></span>
+                    </div>
+                    <div class="message">
+                        OK
+                    </div>
+                </li>
+            </ul>
+            <footer>
+                <textarea placeholder="Escribir mensaje"></textarea>
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/ico_picture.png" alt="">
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/ico_file.png" alt="">
+                <a href="#">Send</a>
+            </footer>
+        </main>
     </div>
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
 </body>

@@ -23,20 +23,21 @@ body {
   width: 250px;
   height: 100%;
   background: #BFC882;
-  padding: 30px 0px;
+  padding: 0px;
 }
 
-.wrapper .sidebar a{
-    text-decoration: none;
+.wrapper .sidebar a {
+  text-decoration: none;
 }
 
-.wrapper .sidebar .suggestions{
-    position: absolute;
+.wrapper .sidebar .suggestions {
+  position: absolute;
 }
 
-.wrapper .sidebar ul h2 {
+.wrapper .sidebar h2 {
   color: black;
   text-transform: uppercase;
+  margin-top: 25px;
   margin-left: 17px;
   margin-bottom: 25px;
 }
@@ -79,57 +80,58 @@ body {
   align-items: flex-start;
 }
 
-.wrapper .main_content .publish .profile_pic{
-    width: 50px;
-    height: 50px;
-    margin: 0px 5px;
-    background-image: url("../assets/images/drDolittle.jpg");
-    background-size: cover;
-    border-radius: 2em;
-    border: 1px solid #717171;
+.wrapper .main_content .publish .profile_pic {
+  width: 50px;
+  height: 50px;
+  margin: 0px 5px;
+  background-image: url("../assets/images/drDolittle.jpg");
+  background-size: cover;
+  border-radius: 2em;
+  border: 1px solid #717171;
 }
 
-.wrapper .main_content .publish .profile_pic + div{
-    width: 80%;
-    flex-direction: column;
+.wrapper .main_content .publish .profile_pic+div {
+  width: 80%;
+  flex-direction: column;
 }
 
-.wrapper .main_content .publish .profile_pic + div .text_area{
-    width: 100%;
-    margin-bottom: 10px;
-    font-family: 'Roboto', sans-serif;
-    font-size: 1em;
+.wrapper .main_content .publish .profile_pic+div .text_area {
+  width: 100%;
+  margin-bottom: 10px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1em;
 }
 
-.icons_cont{
-    display: flex;
-    justify-content: space-evenly;
-    font-size: 1.5em;
-    align-items: center;
+.icons_cont {
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 1.5em;
+  align-items: center;
 }
 
-.wrapper .main_content .publish div input{
-    border-radius: 2em;
-    padding: 5px;;
+.wrapper .main_content .publish div input {
+  border-radius: 2em;
+  padding: 5px;
+  ;
 }
 
-.btn{
-    width: 7em;
-    height: 2em;
-    background: #BFC882;
-    color: black;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 700;
-    font-size: 1rem;
-    padding: .5em 0;
-    border: none;
-    border-radius: 2em;
-    box-shadow: 1px 1px 3px #bfc882;
+.btn {
+  width: 7em;
+  height: 2em;
+  background: #BFC882;
+  color: black;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: .5em 0;
+  border: none;
+  border-radius: 2em;
+  box-shadow: 1px 1px 3px #bfc882;
 }
 
-.wall{
-    display: flex;
-    flex-wrap: wrap;
+.wall {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .wall .card {
@@ -138,6 +140,26 @@ body {
   font-weight: 100;
   margin: 1em auto;
   width: 80%;
+}
+
+.card-cover {
+  background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/17779/yosemite-3.jpg");
+  background-size: cover;
+  height: 15rem;
+  box-shadow: inset rgba(0, 0, 0, 0.2) 0 64px 64px 16px;
+}
+
+.card-author .dolittle::before {
+  background: url(/assets/images/drDolittle.jpg);
+  background-size: cover;
+  border-radius: 50%;
+  content: " ";
+  display: inline-block;
+  height: 60px;
+  margin-right: .5rem;
+  position: relative;
+  top: 10rem;
+  width: 60px;
 }
 
 .card-author {
@@ -169,19 +191,34 @@ body {
   width: 80%;
 }
 
+.card-title h1 {
+  color: #333;
+  font-weight: 400;
+  font-size: 20px;
+}
+
 .card-summary p {
   margin: 0.7em 0;
   color: #4d4d4d;
 }
 
-.card-summary img{
+.card-summary .info {
+  font-size: 12px;
+  margin: 0;
+  color: black;
+}
+
+.card-summary .info:first-child {
+  font-weight: 700;
+}
+.card-summary img {
   width: 30%;
   height: 160px;
   object-fit: cover;
   border-radius: 1em;
 }
 
-.more_photo{
+.more_photo {
   display: flex;
   float: right;
   height: 160px;
@@ -192,11 +229,11 @@ body {
   font-size: 30px;
 }
 
-.more_photo a{
+.more_photo a {
   text-decoration: none;
 }
 
-.ocult{
+.ocult {
   display: none;
 }
 
@@ -219,7 +256,7 @@ body {
   margin-right: auto;
 }
 
-.card-footer li + li {
+.card-footer li+li {
   margin-left: .5rem;
 }
 
@@ -297,6 +334,19 @@ body {
 
 .card-author .vazquez::before {
   background: url(/assets/images/caro.jpg);
+  background-size: cover;
+  border-radius: 50%;
+  content: " ";
+  display: inline-block;
+  height: 32px;
+  margin-right: .5rem;
+  position: relative;
+  top: 8px;
+  width: 32px;
+}
+
+.card-author .dolittle2::before {
+  background: url(/assets/images/drDolittle.jpg);
   background-size: cover;
   border-radius: 50%;
   content: " ";

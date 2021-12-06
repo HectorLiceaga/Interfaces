@@ -26,7 +26,7 @@
             <header>
                 <input type="text" placeholder="Buscar">
             </header>
-            <ul>
+            <ul class="scroll_style">
                 <li>
                     <img src="/assets/images/carlos.jpg" alt="">
                     <div>
@@ -71,13 +71,16 @@
             </ul>
         </aside>
         <main>
-            <header>
+            <div class="header">
                 <img src="/assets/images/drRomero.jpg" alt="">
                 <div>
                     <h2>Mensajes Doctor Romero</h2>
                     <h3>cantida de mensajes: 1902</h3>
                 </div>
-            </header>
+                <div class="call">
+                    <a href="" class="calling"><img src="/assets/images/llamada.png" alt=""></a>
+                </div>
+            </div >
             <ul class="chat">
                 <li class="you">
                     <div class="entete">
@@ -140,7 +143,7 @@
                     </div>
                 </li>
             </ul>
-            <footer>
+            <div class="footer">
                 <textarea placeholder="Escribir mensaje"></textarea>
                 <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/ico_picture.png" alt="">
                 <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/ico_file.png" alt="">
@@ -148,6 +151,13 @@
             </footer>
         </main>
     </div>
+    <section class="modal ">
+        <div class="modal__container">
+            <img src="/assets/images/drRomero.jpg" class="modal__img">
+            <a href="#" class="modal__close"><img src="/assets/images/llama.png" alt=""></a>
+        </div>
+    </section>
+    <script src="/js/calling.js"></script>
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
 </body>
 

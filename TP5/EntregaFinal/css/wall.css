@@ -72,6 +72,7 @@ body {
   border-radius: 25px 0px 0px 25px;
   color: #fff;
 }
+
 .wrapper .main_content {
   width: 100%;
 }
@@ -213,7 +214,7 @@ body {
 
 .card-summary .info {
   font-size: 14px;
-  margin: 0;
+  margin-bottom: 15px;
 }
 
 .card-summary .info:first-child {
@@ -296,7 +297,8 @@ body {
   font-size: 15px;
 }
 
-.card-footer ul li .far, .card-footer ul li .bx,
+.card-footer ul li .far,
+.card-footer ul li .bx,
 .card-footer ul li .fas {
   fill: #999999;
   height: 24px;
@@ -363,7 +365,6 @@ body {
   width: 40px;
 }
 
-
 .search input {
   border-radius: 2em;
   padding: 5px;
@@ -394,7 +395,7 @@ body {
   padding-bottom: 15px;
 }
 
-.people_sug button{
+.people_sug button {
   width: 45px;
   height: 15px;
   margin-left: 46px;
@@ -406,7 +407,6 @@ body {
   border-radius: 2em;
   box-shadow: 1px 1px 3px #fff;
 }
-
 
 .card-author .jackson::before {
   background: url(/assets/images/jackson.jpg);
@@ -459,7 +459,7 @@ body {
   animation: spin 2s linear infinite;
 }
 
-.main_content .search_header ul{
+.main_content .search_header {
   list-style: none;
   display: flex;
   flex-wrap: row;
@@ -469,25 +469,63 @@ body {
   background-color: #e6edb8;
   padding-top: 5%;
   padding-bottom: 3%;
+  cursor: pointer;
 }
 
+.main_content .search_header ul + li {
+  padding: 15px;
+  margin-left: 2px;
+  background-color: #5e9176;
+  border-radius: 25px;
+  color: #fff;
+}
 
-.main_content .search_header ul li a{
+.main_content .search_header ul li a {
   text-decoration: none;
 }
 
+.search_body{
+  background-color: #e6e6e6;
+}
 
+.person{
+  display: block;
+}
 
+.institution{
+  display: none;
+}
+
+.stud{
+  display: none;
+}
+
+.header_brooks{
+  background-color: #e6e6e6;
+  padding: 1.5rem;
+}
+
+.search_header div{
+  padding: 1.5rem;
+}
 
 /* Safari */
 @-webkit-keyframes spin {
-  0% { -webkit-transform: rotate(0deg); }
-  100% { -webkit-transform: rotate(360deg); }
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 @media (max-height: 500px) {

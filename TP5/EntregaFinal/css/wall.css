@@ -67,6 +67,11 @@ body {
   color: #fff;
 }
 
+.active {
+  background-color: #5e9176;
+  border-radius: 25px 0px 0px 25px;
+  color: #fff;
+}
 .wrapper .main_content {
   width: 100%;
 }
@@ -137,7 +142,7 @@ body {
 
 .wall .card {
   border-radius: 5px;
-  box-shadow: rgba(0, 0, 0, 0.2) 0 4px 2px -2px;
+  box-shadow: rgba(0, 0, 0, 0.2) 1px 4px 2px 1px;
   font-weight: 100;
   margin: 1em auto;
   width: 80%;
@@ -291,7 +296,7 @@ body {
   font-size: 15px;
 }
 
-.card-footer ul li .far,
+.card-footer ul li .far, .card-footer ul li .bx,
 .card-footer ul li .fas {
   fill: #999999;
   height: 24px;
@@ -358,14 +363,11 @@ body {
   width: 40px;
 }
 
-.search {
-
-}
 
 .search input {
   border-radius: 2em;
   padding: 5px;
-  border-color: #3c3939;
+  border: none;
   width: 90%;
   margin-top: 10%;
   margin-bottom: 10px;
@@ -387,6 +389,9 @@ body {
 
 .people_sug {
   font-size: 11px;
+  background-color: #f3edbd;
+  border-radius: 2em;
+  padding-bottom: 15px;
 }
 
 .people_sug button{
@@ -401,6 +406,7 @@ body {
   border-radius: 2em;
   box-shadow: 1px 1px 3px #fff;
 }
+
 
 .card-author .jackson::before {
   background: url(/assets/images/jackson.jpg);
@@ -439,6 +445,49 @@ body {
   position: relative;
   top: 18px;
   width: 40px;
+}
+
+.loader {
+  margin-left: 600px;
+  margin-top: 240px;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #5e9176;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+.main_content .search_header ul{
+  list-style: none;
+  display: flex;
+  flex-wrap: row;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-left: 0;
+  background-color: #e6edb8;
+  padding-top: 5%;
+  padding-bottom: 3%;
+}
+
+
+.main_content .search_header ul li a{
+  text-decoration: none;
+}
+
+
+
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 @media (max-height: 500px) {

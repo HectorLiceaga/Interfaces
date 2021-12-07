@@ -30,24 +30,137 @@
         </div>
         <div class="main_content">
             <div class="search_header">
-                <ul>
-                    <li><a href="">Personas</a></li>
-                    <li><a href="">Empresas</a></li>
-                    <li><a href="">Instituciones</a></li>
-                </ul>
+                <div id="personas" class="header_brooks">Personas</div>
+                <div id="empresas">Empresas</div>
+                <div id="instituciones">Instituciones</div>
             </div>
             <div class="search_body">
-
+                <div class="card person" id="cardRomero">
+                    <div class="card-header">
+                        <div class="card-author">
+                            <h3 class="romero">Doctor Romero</h3>
+                            <p class="published-date">Hace 2h</p>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-summary">
+                            <p>Yo digo siempre perrizar al perro, gatizar al gato y humanizar al hombre que somos tres
+                                especies diferentes que la vida nos ha hecho estar en compañía. Con el gato hace seis
+                                mil años, con el perro hace treinta mil años</p>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <ul>
+                            <li class="likes"><a href="#"><i class="far fa-heart"></i></use><span
+                                        class="numero">3</span></a></li>
+                            <li><a href=""><i class="far fa-angry"></i></a></li>
+                            <li class="comments"><a href="#"><i class="far fa-comment"></i></use><span
+                                        class="numero">8</span></a></li>
+                            <li class="share"><a href="#">
+                                    <box-icon name='share-alt'></box-icon>
+                                    </use></span>
+                                </a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card person" id="cardJackson" style="background-color: #fff;">
+                    <div class="card-header">
+                        <div class="card-author">
+                            <h3 class="jackson">Jackson Martínez</h3>
+                            <p class="published-date">Hace 35min</p>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-summary">
+                            <p>De mi perro he aprendido que cuando alguien tiene un mal día, 
+                                basta con sentarse en silencio y acompañarle.</p>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <ul>
+                            <li class="likes"><a href="#"><i class="far fa-heart"></i></use><span
+                                        class="numero">3</span></a></li>
+                            <li><a href=""><i class="far fa-angry"></i></a></li>
+                            <li class="comments"><a href="#"><i class="far fa-comment"></i></use><span
+                                        class="numero">8</span></a></li>
+                            <li class="share"><a href="#">
+                                    <box-icon name='share-alt'></box-icon>
+                                    </use></span>
+                                </a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card institution" id="cardApar">
+                    <div class="card-header">
+                        <div class="card-author">
+                            <h3 class="apar">Asociación Protectora de Animales Rauch</h3>
+                            <p class="published-date">Hace 20h</p>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-summary">
+                            <p>Sale a la venta la rifa anual de la protectora a solo $100, 1er premio: un cordero 
+                                ensillado, 2do premio: un lechón ensillado.</p>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <ul>
+                            <li class="likes"><a href="#"><i class="far fa-heart"></i></use><span
+                                        class="numero">3</span></a></li>
+                            <li><a href=""><i class="far fa-angry"></i></a></li>
+                            <li class="comments"><a href="#"><i class="far fa-comment"></i></use><span
+                                        class="numero">8</span></a></li>
+                            <li class="share"><a href="#">
+                                    <box-icon name='share-alt'></box-icon>
+                                    </use></span>
+                                </a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card stud" id="cardStud">
+                    <div class="card-header">
+                        <div class="card-author">
+                            <h3 class="horse">Stud Los Ceibos</h3>
+                            <p class="published-date">Hace 3h</p>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-summary">
+                            <p>Sale a la venta la rifa anual de la protectora a solo $100, 1er premio: un cordero 
+                                ensillado, 2do premio: un lechón ensillado.</p>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <ul>
+                            <li class="likes"><a href="#"><i class="far fa-heart"></i></use><span
+                                        class="numero">3</span></a></li>
+                            <li><a href=""><i class="far fa-angry"></i></a></li>
+                            <li class="comments"><a href="#"><i class="far fa-comment"></i></use><span
+                                        class="numero">8</span></a></li>
+                            <li class="share"><a href="#">
+                                    <box-icon name='share-alt'></box-icon>
+                                    </use></span>
+                                </a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="sidebar suggestions">
             <div class="search">
                 <input type="search" placeholder=" Buscar">
             </div>
+            <div class="search_body"></div>
             <div class="people_sug">
                 <div class="person_sug">
                     <div class="card-author">
                         <p class="jackson">Jackson Martínez</p>
+                        <button class="btn_add">Seguir</button>
+                    </div>
+                </div>  
+                <div class="person_sug">
+                    <div class="card-author">
+                        <p class="horse">Stud Los Ceibos</p>
                         <button class="btn_add">Seguir</button>
                     </div>
                 </div>
@@ -57,12 +170,7 @@
                         <button class="btn_add">Seguir</button>
                     </div>
                 </div>
-                <div class="person_sug">
-                    <div class="card-author">
-                        <p class="horse">Stud Los Ceibos</p>
-                        <button class="btn_add">Seguir</button>
-                    </div>
-                </div>
+
             </div>
             <div class="advertise">
                 <img src="../assets/images/publicidad1.jpg" alt="publicidad seguro animal">

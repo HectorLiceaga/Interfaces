@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+	color: #3C3939;
 }
 
 body {
@@ -19,7 +20,7 @@ body {
 .sidebar {
     width: 16%;
     height: 100%;
-    background: #BFC882;
+    background: #E6EDB8;
     padding: 0px;
 }
 
@@ -28,7 +29,6 @@ body {
 }
 
 .sidebar h2 {
-    color: black;
     text-transform: uppercase;
     margin-top: 25px;
     margin-left: 17px;
@@ -41,7 +41,6 @@ body {
 }
 
 .sidebar ul li a {
-    color: black;
     display: block;
     text-decoration: none;
 }
@@ -81,7 +80,6 @@ body {
 aside{
 	width:28%;
 	height:100vh;
-	background-color:#daddca;
 	display:inline-block;
 	font-size:15px;
 	vertical-align:top;
@@ -98,24 +96,21 @@ main{
 aside header{
 	padding:30px 20px;
 }
+
 aside input{
 	width:100%;
 	height:50px;
 	line-height:50px;
 	padding:0 50px 0 20px;
-	background-color:#77a77f;
 	border:none;
 	border-radius:3px;
-	color:#fff;
 	background-image:url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/ico_search.png);
 	background-repeat:no-repeat;
 	background-position:96%;
 	background-size:40px;
 }
 
-aside input::placeholder{
-	color:#fff;
-}
+
 
 aside ul{
 	padding-left:0;
@@ -140,7 +135,8 @@ aside li{
 }
 
 aside li:hover{
-	background-color:#BFC882;
+	background-color:#E6EDB8;
+	border-radius: 25px 0px 0px 25px;
 }
 
 h2,h3{

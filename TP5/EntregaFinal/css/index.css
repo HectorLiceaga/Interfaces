@@ -4,13 +4,14 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    color: #3C3939;
 }
 
 body{
     font-family: 'Roboto', sans-serif;
     display: flex;
     min-height: 100vh;
-    background-color: #BFC882;
+    background-color: #E6EDB8;
 }
 
 .index{
@@ -24,6 +25,7 @@ body{
 }
 
 .index h1{
+    margin-top: 0.5em;
     margin-bottom: .5em;
 }
 
@@ -31,6 +33,7 @@ body{
     margin: 10px 7px 5px 0px;
     width: 90%;
     font-weight: 300;
+    font-size: 1.3rem;
 }
 
 .image img{
@@ -56,7 +59,7 @@ body{
 
 .title{
     font-size: 2rem;
-    margin-bottom: .5em;
+    margin-bottom: 0.5em;
 }
 
 .reg_container p{
@@ -71,17 +74,17 @@ body{
 }
 
 .register{
-    border-top: 1px solid #706c6c50 ;
+    border-top: 1px solid #5757577e ;
     gap: 1em;
 }
 
 .link{
     font-weight: 400;
-    color: black;
+    color: 3C3939;
 }
 
 .form_container{
-    margin-top: 3em;
+    margin-top: 2em;
     display: grid;
     gap: 2.5em;
 }
@@ -93,7 +96,6 @@ body{
 .input{
     width: 100%;
     background: none;
-    color: black;
     font-size: 1rem;
     padding: .6em .3em;
     border: none;
@@ -103,14 +105,14 @@ body{
 }
 
 .input:not(:placeholder-shown){
-    color: #161212;
+    color: #3C3939;
 }
 
 .input:focus + .label,
 .input:not(:placeholder-shown) + .label{
     transform: translateY(-12px) scale(.7);
     transform-origin: left top;
-    color:#BFC882;
+    color:#3C3939;
 }
 
 .label{
@@ -123,18 +125,21 @@ body{
     transition: transform .5s, color .3s;
 }
 
+.form .form_container .enter{
+    margin-top: 3rem;
+} 
+
 .btn{
     width: 40%;
     margin: auto;
-    background: #BFC882;
-    color: black;
+    background: #E6EDB8;
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
     font-size: 1rem;
     padding: .8em 0;
     border: none;
     border-radius: .5em;
-    box-shadow: 1px 1px 3px #bfc882;
+    box-shadow: 1px 1px 3px #E6EDB8;
 }
 
 .line{
@@ -143,7 +148,7 @@ body{
     left: 0;
     width: 100%;
     height: 1px;
-    background-color: #BFC882;
+    background-color: #E6EDB8;
     transform: scale(0);
     transform: left bottom;
     transition: transform .4s;
@@ -159,10 +164,14 @@ body{
     font-size: 14px;
     padding: 8px;
     text-decoration: none;
-    color: black;
 }
 .btn_register{
-    border: 2px solid #BFC882;
+    border: 2px solid #E6EDB8;
     background: white;
-    color: #BFC882;
+    color: #E6EDB8;
+}
+
+.btn_register:hover{
+    background-color: #E6EDB8;
+    color: #3C3939;
 }

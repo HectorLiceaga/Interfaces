@@ -71,18 +71,20 @@ body {
 .chat_container{
 	width:84%;
 	height:100vh;
-	background:#eff3f7;
+	background:#ffffff;
 	margin:0;
 	font-size:0;
 	overflow:hidden;
 }
 
 aside{
+	background: #F3EDBD;
 	width:28%;
 	height:100vh;
 	display:inline-block;
 	font-size:15px;
 	vertical-align:top;
+	border-right: 2px solid #E6EDB8;
 }
 
 main{
@@ -102,32 +104,19 @@ aside input{
 	height:50px;
 	line-height:50px;
 	padding:0 50px 0 20px;
-	border:none;
-	border-radius:3px;
+	border: 1px solid #E6EDB8;
+	border-radius:5em;
 	background-image:url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/ico_search.png);
 	background-repeat:no-repeat;
 	background-position:96%;
 	background-size:40px;
 }
 
-
-
 aside ul{
 	padding-left:0;
 	margin:0;
 	list-style-type:none;
 	height:100vh;
-}
-
-.scroll_style::-webkit-scrollbar-track{
-    box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-	border-radius: 10px;
-	background-color: #F5F5F5
-}
-
-.scroll_style::-webkit-scrollbar{
-    width: 12px;
-	background-color: #F5F5F5
 }
 
 aside li{
@@ -193,6 +182,7 @@ aside li h3{
 main .header{
 	height:110px;
 	padding:30px 20px 30px 40px;
+	border-bottom: 1px solid #E6EDB8;
 }
 
 main .header > *{
@@ -210,7 +200,7 @@ main .header img:first-child{
 
 main .header div{
 	margin-left:10px;
-	margin-right:145px;
+	margin-right:1.4em;
 }
 
 main .header h2{
@@ -229,9 +219,8 @@ main .header h3{
 }
 
 .call img{
-    float: inline-end;
-    width: 24px;
-    height: 24px;
+    width: 30px;
+    height: 30px;
 }
 
 .chat{
@@ -258,9 +247,10 @@ main .header h3{
 .chat .entete{
 	margin-bottom:5px;
 }
+
 .chat .message{
-	padding:20px;
-	color:#fff;
+	padding: 8px;
+	color:rgb(100, 99, 99);
 	line-height:25px;
 	max-width:90%;
 	display:inline-block;
@@ -273,11 +263,11 @@ main .header h3{
 }
 
 .chat .you .message{
-	background-color:#58b666;
+	background-color:#E6EDB8;
 }
 
 .chat .me .message{
-	background-color:#6fbced;
+	background-color:#F3EDBD;
 }
 
 main .footer{
@@ -290,15 +280,17 @@ main .footer textarea{
 	border: 1px solid rgb(155, 153, 153);
 	display:block;
 	width:100%;
-	height:55px;
+	height:3rem;
 	border-radius:3px;
-	padding:20px;
-	font-size:13px;
-	margin-bottom:13px;
+	padding:5px;
+	font-size:10px;
+	font-family: "Roboto", sans-serif;
 }
+
 main .footer textarea::placeholder{
 	color:rgb(155, 153, 153);
 }
+
 main .footer img{
 	height:30px;
 	cursor:pointer;
